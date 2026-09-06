@@ -104,17 +104,15 @@ export function Hero() {
           </p>
 
           <div className="hero-buttons">
-            <Link
-              href="/for/buyers"
-              className="hero-button hero-button--primary"
-            >
-              Buy Carbon Credits &rarr;
+            <Link href="/for/buyers">
+              <Button className="hero-button hero-button--primary">
+                Buy Carbon Credits &rarr;
+              </Button>
             </Link>
-            <Link
-              href="/marketplace"
-              className="hero-button hero-button--secondary"
-            >
-              Explore Marketplace &rarr;
+            <Link href="/marketplace">
+              <Button className="hero-button hero-button--secondary">
+                Explore Marketplace &rarr;
+              </Button>
             </Link>
           </div>
         </div>
