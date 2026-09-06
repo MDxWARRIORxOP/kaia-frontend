@@ -101,13 +101,13 @@ export function Footer() {
             <p>2026 KAIA. All rights reserved.</p>
             <div className="flex flex-wrap items-center gap-8">
               <Link
-                href="/"
+                href="/policies/privacy"
                 className="transition-colors duration-200 hover:text-white"
               >
                 Privacy Policy
               </Link>
               <Link
-                href="/"
+                href="/policies/terms"
                 className="transition-colors duration-200 hover:text-white"
               >
                 Terms &amp; Conditions
