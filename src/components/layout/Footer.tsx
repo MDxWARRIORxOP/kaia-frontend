@@ -77,9 +77,11 @@ export function Footer() {
           </div>
 
           <div>
-            <h2 className="text-[16px] font-semibold leading-6 text-white">
-              Contact
-            </h2>
+            <Link href="/contact">
+              <h2 className="text-[16px] font-semibold leading-6 text-white">
+                Contact
+              </h2>
+            </Link>
             <div className="mt-6 space-y-5 text-[16px] font-medium leading-6 text-white/80">
               <p>{contactDetails.email}</p>
               <p>{contactDetails.phone}</p>
