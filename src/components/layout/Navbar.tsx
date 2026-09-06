@@ -7,6 +7,7 @@ import { cn } from "../../lib/cn";
 import { Button } from "../ui/Button";
 import { Container } from "../ui/Container";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navLinkClassName = (isActive: boolean) =>
   cn(
@@ -56,10 +57,11 @@ function CloseIcon() {
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
-  // useEffect(() => {
-  //   setIsMenuOpen(false);
-  // }, [pathname]);
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname]);
 
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "";
@@ -86,7 +88,7 @@ export function Navbar() {
                 <Link
                   key={item.path}
                   href={item.path}
-                  className={navLinkClassName(false)}
+                  className={navLinkClassName(pathname === item.path)}
                 >
                   {item.label}
                 </Link>
@@ -123,7 +125,7 @@ export function Navbar() {
                 <Link
                   key={item.path}
                   href={item.path}
-                  className={navLinkClassName(false)}
+                  className={navLinkClassName(pathname === item.path)}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
@@ -133,7 +135,7 @@ export function Navbar() {
 
             <div className="border-t border-darkGreen/10 px-5 pb-4 pt-3 sm:px-6">
               <Link
-                href="/contact-us"
+                href="/contact"
                 className="block"
                 onClick={() => setIsMenuOpen(false)}
               >
