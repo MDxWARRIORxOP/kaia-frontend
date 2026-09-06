@@ -163,6 +163,20 @@ function IconCart() {
   );
 }
 
+function IconList() {
+  return (
+    <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+      <path
+        d="M3.75 4.5H3.76M7.25 4.5H14.25M3.75 9H3.76M7.25 9H14.25M3.75 13.5H3.76M7.25 13.5H14.25"
+        stroke="currentColor"
+        strokeWidth="1.45"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 function IconArrowRight() {
   return (
     <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
@@ -179,6 +193,7 @@ function IconArrowRight() {
 
 export default function ContactUsPage() {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
+  const [active, setActive] = useState(0);
   const testimonial = testimonials[activeTestimonial];
 
   const goToPreviousTestimonial = () => {
@@ -280,17 +295,26 @@ export default function ContactUsPage() {
             >
               <button
                 type="button"
-                className="contact-page__path-button contact-page__path-button--active"
+                className={`contact-page__path-button contact-page__path-button${active === 0 && "--active"}`}
+                onClick={() => {
+                  setActive(0);
+                }}
               >
                 <IconCart />I want to buy credits
               </button>
-              <button type="button" className="contact-page__path-button">
+              <button
+                type="button"
+                className={`contact-page__path-button contact-page__path-button${active === 1 && "--active"}`}
+                onClick={() => {
+                  setActive(1);
+                }}
+              >
                 <img
-                  src={"/images/singleBlackLeaf.svg"}
+                  src={"/icons/singleBlackLeaf.svg"}
                   alt=""
                   aria-hidden="true"
                 />
-                I want to list a project
+                {/* <IconList /> */}I want to list a project
               </button>
             </div>
 
