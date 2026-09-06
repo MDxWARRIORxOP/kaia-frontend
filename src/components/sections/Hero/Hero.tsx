@@ -6,6 +6,7 @@ import { RotatingText } from "../../ui/RotatingText";
 
 import "./Hero.css";
 import Image from "next/image";
+import Link from "next/link";
 
 export function Hero() {
   const [phase, setPhase] = useState<"rect" | "leaf" | "shrink">("rect");
@@ -103,15 +104,18 @@ export function Hero() {
           </p>
 
           <div className="hero-buttons">
-            <Button className="hero-button hero-button--primary">
+            <Link
+              href="/for/buyers"
+              className="hero-button hero-button--primary"
+            >
               Buy Carbon Credits &rarr;
-            </Button>
-            <Button
-              variant="secondary"
+            </Link>
+            <Link
+              href="/marketplace"
               className="hero-button hero-button--secondary"
             >
               Explore Marketplace &rarr;
-            </Button>
+            </Link>
           </div>
         </div>
       </Container>
