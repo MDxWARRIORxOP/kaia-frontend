@@ -163,20 +163,6 @@ function IconCart() {
   );
 }
 
-function IconList() {
-  return (
-    <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
-      <path
-        d="M3.75 4.5H3.76M7.25 4.5H14.25M3.75 9H3.76M7.25 9H14.25M3.75 13.5H3.76M7.25 13.5H14.25"
-        stroke="currentColor"
-        strokeWidth="1.45"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
 function IconArrowRight() {
   return (
     <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
@@ -314,7 +300,7 @@ export default function ContactUsPage() {
                   alt=""
                   aria-hidden="true"
                 />
-                {/* <IconList /> */}I want to list a project
+                I want to list a project
               </button>
             </div>
 
