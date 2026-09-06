@@ -68,7 +68,7 @@ export function Footer() {
                 </Link>
               ))}
               <Link
-                href="/contact-us"
+                href="/contact"
                 className="text-[16px] font-medium leading-6 text-white/80 transition-colors duration-200 hover:text-white"
               >
                 Contact Us
