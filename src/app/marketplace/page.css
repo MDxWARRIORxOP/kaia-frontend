@@ -1,0 +1,639 @@
+.marketplace-page {
+  overflow: hidden;
+  background: #ffffff;
+  color: #122013;
+  animation: marketplace-page-slide-up 720ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  transform-origin: center bottom;
+}
+
+@keyframes marketplace-page-slide-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 72px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.marketplace-page__hero {
+  position: relative;
+  min-height: 595px;
+  background: #15351f;
+}
+
+.marketplace-page__hero-image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.marketplace-page__hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 45, 26, 0.74) 0%,
+      rgba(5, 45, 26, 0.5) 32%,
+      rgba(5, 45, 26, 0.04) 72%
+    ),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.06) 100%);
+}
+
+.marketplace-page__hero-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: none;
+  min-height: 595px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0 24px 78px clamp(32px, 4vw, 58px);
+  text-align: left;
+}
+
+.marketplace-page__hero-content {
+  max-width: 640px;
+  color: #ffffff;
+  text-align: left;
+}
+
+.marketplace-page__hero-pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 12px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(108, 120, 110, 0.78);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  backdrop-filter: blur(2px);
+}
+
+.marketplace-page__hero h1,
+.marketplace-page__intro h2,
+.marketplace-page__catalogue-header h2 {
+  margin: 0;
+  letter-spacing: -0.045em;
+}
+
+.marketplace-page__hero h1 {
+  margin-top: 24px;
+  font-size: clamp(48px, 6vw, 72px);
+  font-weight: 700;
+  line-height: 0.96;
+  letter-spacing: -0.05em;
+}
+
+.marketplace-page__hero h1 span {
+  display: block;
+  color: #dca64d;
+  font-style: italic;
+}
+
+.marketplace-page__hero p {
+  margin: 24px 0 0;
+  max-width: 610px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: clamp(16px, 1.5vw, 18px);
+  line-height: 1.42;
+}
+
+.marketplace-page__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #4a9d72;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.marketplace-page__eyebrow span {
+  width: 18px;
+  height: 1px;
+  background: currentColor;
+}
+
+.marketplace-page__intro {
+  background: #ffffff;
+  padding: 78px 0 92px;
+}
+
+.marketplace-page__intro-copy {
+  max-width: 790px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.marketplace-page__intro h2 {
+  margin-top: 18px;
+  color: #152615;
+  font-size: clamp(38px, 4vw, 52px);
+  font-weight: 500;
+  line-height: 1.04;
+}
+
+.marketplace-page__intro h2 span,
+.marketplace-page__catalogue-header h2 span {
+  color: #0f7a3f;
+}
+
+.marketplace-page__intro p {
+  margin: 18px auto 0;
+  max-width: 670px;
+  color: rgba(18, 32, 19, 0.78);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.34;
+}
+
+.marketplace-page__catalogue {
+  background: #f5f8f6;
+  padding: 78px 0 100px;
+}
+
+.marketplace-page__catalogue-container {
+  max-width: 1230px;
+}
+
+.marketplace-page__catalogue-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 42px;
+}
+
+.marketplace-page__catalogue-header .marketplace-page__eyebrow {
+  justify-content: flex-start;
+}
+
+.marketplace-page__catalogue-header h2 {
+  margin-top: 18px;
+  color: #152615;
+  font-size: clamp(40px, 4.2vw, 56px);
+  font-weight: 500;
+  line-height: 1.02;
+}
+
+.marketplace-page__search {
+  display: flex;
+  width: min(100%, 560px);
+  height: 42px;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(18, 32, 19, 0.09);
+  border-radius: 999px;
+  background: #ffffff;
+  padding: 0 18px;
+  color: rgba(18, 32, 19, 0.35);
+}
+
+.marketplace-page__search svg {
+  width: 17px;
+  height: 17px;
+  flex: 0 0 auto;
+}
+
+.marketplace-page__search input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  color: #122013;
+  font-size: 14px;
+  font-weight: 500;
+  outline: none;
+}
+
+.marketplace-page__search input::placeholder {
+  color: rgba(18, 32, 19, 0.42);
+}
+
+.marketplace-page__catalogue-grid {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 38px;
+  align-items: start;
+  margin-top: 52px;
+}
+
+.marketplace-page__filters {
+  position: sticky;
+  top: 118px;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 24px 20px 20px;
+  box-shadow: 0 22px 54px rgba(18, 32, 19, 0.06);
+}
+
+.marketplace-page__filters-title {
+  display: block;
+  margin-bottom: 18px;
+  color: rgba(18, 32, 19, 0.48);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.marketplace-page__filter-group {
+  border: 1px solid rgba(18, 32, 19, 0.08);
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.marketplace-page__filter-group + .marketplace-page__filter-group {
+  margin-top: 12px;
+}
+
+.marketplace-page__filter-group > button {
+  display: flex;
+  width: 100%;
+  min-height: 52px;
+  align-items: center;
+  justify-content: space-between;
+  border: 0;
+  background: transparent;
+  padding: 0 16px;
+  color: #122013;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.marketplace-page__filter-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0 16px 18px;
+}
+
+.marketplace-page__filter-option {
+  display: inline-flex;
+  width: auto;
+  min-width: max-content;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  border: 1px solid rgba(18, 32, 19, 0.1);
+  border-radius: 999px;
+  background: #ffffff;
+  padding: 0 14px;
+  color: rgba(18, 32, 19, 0.68);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    border-color 160ms ease,
+    background 160ms ease,
+    color 160ms ease;
+}
+
+.marketplace-page__filter-option--active {
+  border-color: rgba(15, 122, 63, 0.36);
+  background: #e4f3e9;
+  color: #0f7a3f;
+}
+
+.marketplace-page__projects {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px 26px;
+}
+
+.marketplace-page__project-card {
+  overflow: hidden;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 18px 48px rgba(18, 32, 19, 0.08);
+}
+
+.marketplace-page__project-media {
+  position: relative;
+  height: 224px;
+  overflow: hidden;
+  background: #dce8df;
+}
+
+.marketplace-page__project-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 260ms ease;
+}
+
+.marketplace-page__project-card:hover .marketplace-page__project-media img {
+  transform: scale(1.035);
+}
+
+.marketplace-page__project-media span {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  display: inline-flex;
+  min-height: 24px;
+  align-items: center;
+  border-radius: 999px;
+  background: rgba(17, 35, 18, 0.5);
+  padding: 0 10px;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  backdrop-filter: blur(4px);
+}
+
+.marketplace-page__project-body {
+  padding: 14px 16px 18px;
+}
+
+.marketplace-page__project-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 999px;
+  background: #eef3ef;
+  padding: 4px 9px;
+  color: rgba(18, 32, 19, 0.62);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.marketplace-page__project-location svg {
+  width: 12px;
+  height: 12px;
+}
+
+.marketplace-page__project-card h3 {
+  margin: 12px 0 0;
+  color: #162816;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+.marketplace-page__project-card p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 14px 0 0;
+  color: rgba(18, 32, 19, 0.44);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.marketplace-page__project-card p span {
+  position: relative;
+}
+
+.marketplace-page__project-card p span::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 50%;
+  width: 2px;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  transform: translateY(-50%);
+}
+
+.marketplace-page__project-price {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(18, 32, 19, 0.08);
+}
+
+.marketplace-page__project-price span,
+.marketplace-page__project-price strong {
+  display: block;
+}
+
+.marketplace-page__project-price span {
+  color: rgba(18, 32, 19, 0.45);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.marketplace-page__project-price strong {
+  margin-top: 4px;
+  color: #0f7a3f;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.marketplace-page__empty {
+  grid-column: 1 / -1;
+  border: 1px solid rgba(18, 32, 19, 0.1);
+  border-radius: 12px;
+  background: #ffffff;
+  padding: 34px;
+  text-align: center;
+  color: #122013;
+}
+
+.marketplace-page__empty strong {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.marketplace-page__empty p {
+  margin: 8px 0 0;
+  color: rgba(18, 32, 19, 0.62);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.marketplace-page__benefits {
+  background: #ffffff;
+  padding: 94px 0 104px;
+}
+
+.marketplace-page__benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.marketplace-page__benefit-card {
+  min-height: 294px;
+  border: 1px solid rgba(15, 122, 63, 0.18);
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 32px 34px 30px;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.marketplace-page__benefit-card:hover {
+  border-color: rgba(15, 122, 63, 0.5);
+  box-shadow: 0 22px 48px rgba(18, 32, 19, 0.08);
+  transform: translateY(-4px);
+}
+
+.marketplace-page__benefit-icon {
+  display: inline-flex;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: #dcefe3;
+  color: #0f7a3f;
+  transition:
+    background 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.marketplace-page__benefit-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.marketplace-page__benefit-card:hover .marketplace-page__benefit-icon {
+  background: #0f7a3f;
+  color: #ffffff;
+}
+
+.marketplace-page__benefit-card:hover .marketplace-page__benefit-icon {
+  transform: translateY(-2px);
+}
+
+.marketplace-page__benefit-card h3 {
+  margin: 30px 0 0;
+  color: #122013;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+.marketplace-page__benefit-card p {
+  margin: 17px 0 0;
+  color: #122013;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+
+@media (max-width: 1100px) {
+  .marketplace-page__catalogue-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .marketplace-page__filters {
+    position: static;
+  }
+
+  .marketplace-page__filter-options {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .marketplace-page__hero,
+  .marketplace-page__hero-container {
+    min-height: 620px;
+  }
+
+  .marketplace-page__hero-container {
+    padding-bottom: 56px;
+  }
+
+  .marketplace-page__hero h1 {
+    font-size: 46px;
+  }
+
+  .marketplace-page__intro,
+  .marketplace-page__catalogue,
+  .marketplace-page__benefits {
+    padding: 64px 0 72px;
+  }
+
+  .marketplace-page__catalogue-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .marketplace-page__search {
+    width: 100%;
+  }
+
+  .marketplace-page__projects,
+  .marketplace-page__benefit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .marketplace-page__benefit-card {
+    min-height: 0;
+    padding: 28px;
+  }
+
+  .marketplace-page__benefit-card p {
+    font-size: 17px;
+    line-height: 1.25;
+  }
+
+  .marketplace-page__filters {
+    padding: 20px 16px 16px;
+  }
+
+  .marketplace-page__filter-group > button {
+    min-height: 50px;
+  }
+
+  .marketplace-page__filter-option {
+    min-height: 36px;
+    font-size: 13px;
+  }
+
+  .marketplace-page__project-media {
+    height: 220px;
+  }
+}
+
+@media (max-width: 520px) {
+  .marketplace-page__hero h1 {
+    font-size: 40px;
+  }
+
+  .marketplace-page__hero-pill {
+    font-size: 12px;
+  }
+
+  .marketplace-page__intro h2,
+  .marketplace-page__catalogue-header h2 {
+    font-size: 34px;
+  }
+}
