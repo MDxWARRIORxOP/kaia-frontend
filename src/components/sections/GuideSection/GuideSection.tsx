@@ -3,6 +3,7 @@ import { Button } from "../../ui/Button";
 import { Container } from "../../ui/Container";
 
 import "./GuideSection.css";
+import Link from "next/link";
 
 interface GuideSlide {
   leftCopy: string;
@@ -88,8 +89,11 @@ export function GuideSection() {
               ))}
             </div>
 
-            <Button className="guide-section__button">Contact Us &rarr;</Button>
-
+            <Link href="/contact">
+              <Button className="guide-section__button">
+                Contact Us &rarr;
+              </Button>
+            </Link>
             <div className="guide-section__controls" aria-label="Guide slides">
               <button
                 type="button"

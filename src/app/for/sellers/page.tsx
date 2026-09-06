@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { cn } from "@/lib/cn";
 
 import "./page.css";
+import Link from "next/link";
 
 const scaleFeatures = [
   {
@@ -197,10 +198,12 @@ export default function SellersPage() {
             KAIA offers open market access for carbon credits - reach
             multinational buyers actively seeking high-quality offsets.
           </p>
-          <Button className="sellers-page__hero-button">
-            List Your Project
-            <ArrowIcon />
-          </Button>
+          <Link href="/contact">
+            <Button className="sellers-page__hero-button">
+              List Your Project
+              <ArrowIcon />
+            </Button>
+          </Link>
         </div>
 
         <div className="sellers-page__hero-proof-card">
@@ -327,10 +330,12 @@ export default function SellersPage() {
                 strategies with KAIA. Start with as little as one tonne.
               </p>
 
-              <Button className="sellers-page__green-button">
-                Sell Carbon Credits
-                <ArrowIcon />
-              </Button>
+              <Link href="/contact">
+                <Button className="sellers-page__green-button">
+                  Sell Carbon Credits
+                  <ArrowIcon />
+                </Button>
+              </Link>
             </div>
           </div>
         </Container>
@@ -531,10 +536,12 @@ export default function SellersPage() {
               to sell it.
             </p>
             <div className="sellers-page__cta-actions">
-              <Button className="sellers-page__cta-button">
-                Sell Carbon Credits
-                <ArrowIcon />
-              </Button>
+              <Link href="/contact">
+                <Button className="sellers-page__cta-button">
+                  Sell Carbon Credits
+                  <ArrowIcon />
+                </Button>
+              </Link>
             </div>
           </div>
         </Container>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "../../ui/Button";
 import { Container } from "../../ui/Container";
 import { MarqueeStrip } from "../../ui/MarqueeStrip";
@@ -43,10 +44,11 @@ export function AIDecisionSection() {
                 systems to help you discover the right projects, evaluate
                 impact, and transact with confidence.
               </p>
-
-              <Button className="ai-decision-panel__button">
-                Contact Us &rarr;
-              </Button>
+              <Link href="/contact">
+                <Button className="ai-decision-panel__button">
+                  Contact Us &rarr;
+                </Button>
+              </Link>
             </div>
 
             <aside className="ai-decision-panel__card">

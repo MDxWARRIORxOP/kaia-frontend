@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Container } from "../../ui/Container";
 
 import "./TwoSidedMissionSection.css";
@@ -7,6 +8,7 @@ type MissionCard = {
   title: string;
   body: string;
   cta: string;
+  link: string;
   image: string;
   tone: "buyer" | "seller";
 };
@@ -17,6 +19,7 @@ const missionCards: MissionCard[] = [
     title: "Invest in credits that create real impact",
     body: "Access 150+ verified carbon projects. Browse by methodology, geography, or vintage - and retire credits with full transparency.",
     cta: "Explore Buyer Platform",
+    link: "/for/buyers",
     image: "/images/windmillSection7.svg",
     tone: "buyer",
   },
@@ -25,6 +28,7 @@ const missionCards: MissionCard[] = [
     title: "List once. Sell globally.",
     body: "Set your own pricing, maintain full ownership, and reach corporate buyers worldwide through fast, transparent settlement.",
     cta: "Explore Seller Platform",
+    link: "/for/sellers",
     image: "/images/oceanProject7.svg",
     tone: "seller",
   },
@@ -139,7 +143,8 @@ export function TwoSidedMissionSection() {
                 <h3 className="two-sided-mission__card-title">{card.title}</h3>
                 <p className="two-sided-mission__card-body">{card.body}</p>
 
-                <button
+                <Link
+                  href={card.link}
                   type="button"
                   className="two-sided-mission__card-button"
                 >
@@ -150,7 +155,7 @@ export function TwoSidedMissionSection() {
                   >
                     &rarr;
                   </span>
-                </button>
+                </Link>
               </div>
             </article>
           ))}

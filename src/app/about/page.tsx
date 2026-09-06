@@ -240,9 +240,11 @@ export default function AboutUsPage() {
                 transactions accessible, transparent, and fair.
               </p>
 
-              <Button className="about-page__story-button px-5 py-3 text-[14px] font-medium">
-                Contact Us &rarr;
-              </Button>
+              <Link href="/contact">
+                <Button className="about-page__story-button px-5 py-3 text-[14px] font-medium">
+                  Contact Us &rarr;
+                </Button>
+              </Link>
             </div>
           </div>
 
@@ -491,48 +493,52 @@ export default function AboutUsPage() {
             </p>
 
             <div className="about-page__cta-actions">
-              <Button className="about-page__cta-button about-page__cta-button--primary">
-                <span>Buy Carbon Credits</span>
-                <span
-                  className="about-page__cta-button-icon"
-                  aria-hidden="true"
-                >
-                  <svg
-                    viewBox="0 0 16 16"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+              <Link href="/for/buyers">
+                <Button className="about-page__cta-button about-page__cta-button--primary">
+                  <span>Buy Carbon Credits</span>
+                  <span
+                    className="about-page__cta-button-icon"
+                    aria-hidden="true"
                   >
-                    <path
-                      d="M3.33301 8H12.6663M12.6663 8L8.66634 4M12.6663 8L8.66634 12"
-                      stroke="currentColor"
-                      strokeWidth="1.6"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </span>
-              </Button>
-              <Button className="about-page__cta-button about-page__cta-button--secondary">
-                <span>Explore Marketplace</span>
-                <span
-                  className="about-page__cta-button-icon"
-                  aria-hidden="true"
-                >
-                  <svg
-                    viewBox="0 0 16 16"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+                    <svg
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.33301 8H12.6663M12.6663 8L8.66634 4M12.6663 8L8.66634 12"
+                        stroke="currentColor"
+                        strokeWidth="1.6"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </span>
+                </Button>
+              </Link>
+              <Link href="/marketplace">
+                <Button className="about-page__cta-button about-page__cta-button--secondary">
+                  <span>Explore Marketplace</span>
+                  <span
+                    className="about-page__cta-button-icon"
+                    aria-hidden="true"
                   >
-                    <path
-                      d="M3.33301 8H12.6663M12.6663 8L8.66634 4M12.6663 8L8.66634 12"
-                      stroke="currentColor"
-                      strokeWidth="1.6"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </span>
-              </Button>
+                    <svg
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.33301 8H12.6663M12.6663 8L8.66634 4M12.6663 8L8.66634 12"
+                        stroke="currentColor"
+                        strokeWidth="1.6"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </span>
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

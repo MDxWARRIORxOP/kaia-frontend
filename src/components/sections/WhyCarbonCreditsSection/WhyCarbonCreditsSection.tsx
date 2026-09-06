@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "../../ui/Button";
 import { Container } from "../../ui/Container";
 
@@ -104,9 +105,11 @@ export function WhyCarbonCreditsSection() {
               ))}
             </ul>
 
-            <Button className="why-carbon-credits__button">
-              Contact Us &rarr;
-            </Button>
+            <Link href="/contact">
+              <Button className="why-carbon-credits__button">
+                Contact Us &rarr;
+              </Button>
+            </Link>
           </div>
 
           <div className="why-carbon-credits__media">

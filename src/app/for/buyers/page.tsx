@@ -298,10 +298,12 @@ export default function BuyersPage() {
                 offerings, manage purchases, retire credits, and generate
                 reports, all from one platform.
               </p>
-              <Button className="buyers-page__green-button">
-                Partner with KAIA
-                <ArrowIcon />
-              </Button>
+              <Link href="/contact">
+                <Button className="buyers-page__green-button">
+                  Partner with KAIA
+                  <ArrowIcon />
+                </Button>
+              </Link>
               <span className="buyers-page__supporting-text">
                 Supporting ESG Leaders And Sustainability Teams Globally
               </span>
@@ -460,17 +462,21 @@ export default function BuyersPage() {
                 carbon credits with full transparency and zero friction.
               </p>
               <div className="buyers-page__marketplace-actions">
-                <Button className="buyers-page__green-button">
-                  Explore Marketplace
-                  <ArrowIcon />
-                </Button>
-                <Button
-                  variant="secondary"
-                  className="buyers-page__outline-button"
-                >
-                  Talk to an Expert
-                  <ArrowIcon />
-                </Button>
+                <Link href="/marketplace">
+                  <Button className="buyers-page__green-button">
+                    Explore Marketplace
+                    <ArrowIcon />
+                  </Button>
+                </Link>
+                <Link href="/contact">
+                  <Button
+                    variant="secondary"
+                    className="buyers-page__outline-button"
+                  >
+                    Talk to an Expert
+                    <ArrowIcon />
+                  </Button>
+                </Link>
               </div>
 
               <div className="buyers-page__feature-row">
@@ -664,14 +670,18 @@ export default function BuyersPage() {
           </p>
 
           <div className="buyers-page__cta-actions">
-            <Button className="buyers-page__cta-button buyers-page__cta-button--primary">
-              Buy Carbon Credits
-              <ArrowIcon />
-            </Button>
-            <Button className="buyers-page__cta-button buyers-page__cta-button--secondary">
-              Explore Marketplace``
-              <ArrowIcon />
-            </Button>
+            <Link href="/contact">
+              <Button className="buyers-page__cta-button buyers-page__cta-button--primary">
+                Buy Carbon Credits
+                <ArrowIcon />
+              </Button>
+            </Link>
+            <Link href="/marketplace">
+              <Button className="buyers-page__cta-button buyers-page__cta-button--secondary">
+                Explore Marketplace
+                <ArrowIcon />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
