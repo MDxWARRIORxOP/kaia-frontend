@@ -3,199 +3,7 @@
 import { useMemo, useState } from "react";
 import { Container } from "@/components/ui/Container";
 import "./page.css";
-
-interface FilterGroup {
-  id: "category" | "vintage" | "registry" | "sdg";
-  title: string;
-  options: string[];
-}
-
-interface MarketplaceProject {
-  title: string;
-  location: string;
-  category: string;
-  filterCategory: string;
-  vintage: string;
-  registry: string;
-  sdg: string;
-  type: string;
-  standard: string;
-  volume: string;
-  price: string;
-  image: string;
-}
-
-const filterGroups: FilterGroup[] = [
-  {
-    id: "category",
-    title: "Category",
-    options: [
-      "Energy Efficiency",
-      "Blue Carbon",
-      "Industrial Processing",
-      "Renewable Energy",
-      "Waste Disposal",
-    ],
-  },
-  {
-    id: "vintage",
-    title: "Vintage",
-    options: ["2024", "2023", "2022", "2021"],
-  },
-  {
-    id: "registry",
-    title: "Registry",
-    options: ["Verra VCS", "Gold Standard", "Puro.earth"],
-  },
-  {
-    id: "sdg",
-    title: "UN SDG",
-    options: ["SDG 7", "SDG 12", "SDG 13", "SDG 15"],
-  },
-];
-
-const projects: MarketplaceProject[] = [
-  {
-    title: "Amazon Rainforest Conservation",
-    location: "Para, Brazil",
-    category: "Nature-based",
-    filterCategory: "Blue Carbon",
-    vintage: "2024",
-    registry: "Verra VCS",
-    sdg: "SDG 15",
-    type: "Verra VCS",
-    standard: "REDD+",
-    volume: "1.2M tCO2e",
-    price: "$15.00",
-    image: "/images/windmillSection3_1.svg",
-  },
-  {
-    title: "Rajasthan Solar Farm Development",
-    location: "Rajasthan, India",
-    category: "Nature-based",
-    filterCategory: "Renewable Energy",
-    vintage: "2023",
-    registry: "Gold Standard",
-    sdg: "SDG 7",
-    type: "Gold Standard",
-    standard: "",
-    volume: "850K tCO2e",
-    price: "$8.50",
-    image: "/images/windmillSection3_2.svg",
-  },
-  {
-    title: "Kenya Clean Cookstoves Initiative",
-    location: "Para, Brazil",
-    category: "Health",
-    filterCategory: "Energy Efficiency",
-    vintage: "2024",
-    registry: "Gold Standard",
-    sdg: "SDG 12",
-    type: "Household Energy",
-    standard: "",
-    volume: "340K tCO2e",
-    price: "$18.00",
-    image: "/images/buyerSection6_1.svg",
-  },
-  {
-    title: "India Wind Farm Initiative",
-    location: "Rajasthan, India",
-    category: "Biodiversity",
-    filterCategory: "Renewable Energy",
-    vintage: "2022",
-    registry: "Verra VCS",
-    sdg: "SDG 13",
-    type: "Verra VCS",
-    standard: "REDD+",
-    volume: "1.2M tCO2e",
-    price: "$15.00",
-    image: "/images/windmillSection3_4.svg",
-  },
-  {
-    title: "Amazon Rainforest Conservation",
-    location: "Para, Brazil",
-    category: "Nature-based",
-    filterCategory: "Waste Disposal",
-    vintage: "2021",
-    registry: "Verra VCS",
-    sdg: "SDG 15",
-    type: "Verra VCS",
-    standard: "REDD+",
-    volume: "1.2M tCO2e",
-    price: "$15.00",
-    image: "/images/windmillSection3_4.svg",
-  },
-  {
-    title: "Soil Carbon Sequestration - Brazil",
-    location: "Mato Grosso, Brazil",
-    category: "Health",
-    filterCategory: "Industrial Processing",
-    vintage: "2024",
-    registry: "Puro.earth",
-    sdg: "SDG 13",
-    type: "Household Energy",
-    standard: "",
-    volume: "340K tCO2e",
-    price: "$18.00",
-    image: "/images/oceanProject7.svg",
-  },
-  {
-    title: "Direct Air Capture - Iceland",
-    location: "Iceland, Northern Europe",
-    category: "Nature-based",
-    filterCategory: "Industrial Processing",
-    vintage: "2023",
-    registry: "Puro.earth",
-    sdg: "SDG 13",
-    type: "REDD+",
-    standard: "",
-    volume: "850K tCO2e",
-    price: "$8.50",
-    image: "/images/buyerSection5.svg",
-  },
-  {
-    title: "Soil Carbon Sequestration - Brazil",
-    location: "Mato Grosso, Brazil",
-    category: "Health",
-    filterCategory: "Blue Carbon",
-    vintage: "2022",
-    registry: "Verra VCS",
-    sdg: "SDG 15",
-    type: "Household Energy",
-    standard: "",
-    volume: "340K tCO2e",
-    price: "$18.00",
-    image: "/images/oceanProject7.svg",
-  },
-  {
-    title: "Rajasthan Solar Farm Development",
-    location: "Rajasthan, India",
-    category: "Nature-based",
-    filterCategory: "Renewable Energy",
-    vintage: "2024",
-    registry: "Gold Standard",
-    sdg: "SDG 7",
-    type: "Gold Standard",
-    standard: "",
-    volume: "850K tCO2e",
-    price: "$8.50",
-    image: "/images/windmillSection7.svg",
-  },
-  {
-    title: "Kenya Clean Cookstoves Initiative",
-    location: "Para, Brazil",
-    category: "Clean Energy",
-    filterCategory: "Energy Efficiency",
-    vintage: "2021",
-    registry: "Gold Standard",
-    sdg: "SDG 12",
-    type: "Household Energy",
-    standard: "",
-    volume: "340K tCO2e",
-    price: "$18.00",
-    image: "/images/windmillSection7.svg",
-  },
-];
+import { marketplaceProjects, filterGroups, FilterGroup } from "@/lib/projects";
 
 const benefits = [
   {
@@ -360,7 +168,7 @@ export default function MarketplacePage() {
   const visibleProjects = useMemo(() => {
     const normalizedSearch = searchTerm.trim().toLowerCase();
 
-    return projects.filter((project) => {
+    return marketplaceProjects.filter((project) => {
       const matchesSearch =
         normalizedSearch.length === 0 ||
         [
@@ -391,7 +199,7 @@ export default function MarketplacePage() {
                 ? project.registry
                 : project.sdg;
 
-        return selectedOptions.includes(projectValue);
+        return selectedOptions.join(" ").includes(projectValue);
       });
 
       return matchesSearch && matchesFilters;

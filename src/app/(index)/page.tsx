@@ -19,7 +19,7 @@ export default function HomePage() {
       <WhyCarbonCreditsSection />
       <ClimateConfidenceSection />
       <TwoSidedMissionSection />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
     </div>
   );
 }

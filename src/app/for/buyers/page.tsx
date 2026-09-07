@@ -27,6 +27,7 @@ import { Container } from "@/components/ui/Container";
 import { cn } from "@/lib/cn";
 
 import "./page.css";
+import { marketplaceProjects } from "@/lib/projects";
 
 const serviceCards = [
   {
@@ -605,12 +606,15 @@ export default function BuyersPage() {
           </div>
 
           <div className="buyers-page__project-grid">
-            {projects.map((project) => (
-              <article key={project.name} className="buyers-page__project-card">
+            {marketplaceProjects.slice(0, 3).map((project) => (
+              <article
+                key={project.title}
+                className="buyers-page__project-card"
+              >
                 <div className="buyers-page__project-media">
                   <img
                     src={project.image}
-                    alt={project.name}
+                    alt={project.title}
                     className="buyers-page__project-image"
                   />
                 </div>
@@ -619,14 +623,11 @@ export default function BuyersPage() {
                     <LocationPinIcon />
                     {project.location}
                   </span>
-                  <h3>{project.name}</h3>
+                  <h3>{project.title}</h3>
                   <div className="buyers-page__project-meta">
-                    {project.metadata.map((item, index) => (
-                      <span key={`${project.name}-${item}`}>
-                        {index > 0 ? <i aria-hidden="true" /> : null}
-                        {item}
-                      </span>
-                    ))}
+                    <span>{project.type}</span>
+                    <span>{project.standard}</span>
+                    <span>{project.vintage}</span>
                   </div>
                   <div
                     className="buyers-page__project-divider"
