@@ -147,7 +147,7 @@ export default function EngineeringPage() {
             </h2>
             <p className="eaas-page__problem-body">
               Companies know they need to reduce emissions and improve
-              efficiency. The harder question is:{" "}
+              efficiency. <br /> The harder question is:{" "}
               <strong>what should we actually change?</strong>
             </p>
 

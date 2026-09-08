@@ -119,6 +119,10 @@
   margin: 20px 0;
 }
 
+.eaas-page__problem-container > div {
+  margin: auto 0;
+}
+
 @media (max-width: 1024px) {
   .eaas-page__problem-container {
     grid-template-columns: 1fr;
@@ -131,16 +135,9 @@
     display: none;
   }
 }
-
-.eaas-page__problem-image-container {
-  margin: auto 0;
-  box-shadow: 0 18px 40px rgba(16, 30, 7, 0.06);
-}
-
 .eaas-page__problem-image-container img {
   width: 100%;
   height: auto;
-  border-radius: 10px;
   object-fit: cover;
 }
 
