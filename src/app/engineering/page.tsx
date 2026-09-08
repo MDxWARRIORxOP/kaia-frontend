@@ -148,7 +148,18 @@ export default function EngineeringPage() {
             <p className="eaas-page__problem-body">
               Companies know they need to reduce emissions and improve
               efficiency. <br /> The harder question is:{" "}
-              <strong>what should we actually change?</strong>
+              <strong>
+                what should we{" "}
+                <span
+                  style={{
+                    color: "#166534",
+                    textDecoration: "underline",
+                  }}
+                >
+                  {" "}
+                  actually change?{" "}
+                </span>
+              </strong>
             </p>
 
             <ul className="eaas-page__change-list">
