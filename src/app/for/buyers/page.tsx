@@ -261,7 +261,7 @@ export default function BuyersPage() {
               <span className="buyers-page__supporting-text">
                 Supporting ESG leaders and sustainability teams globally
               </span>
-              <div className="buyers-page__users-row">
+              {/* <div className="buyers-page__users-row">
                 <span />
                 <span />
                 <span />
@@ -269,7 +269,7 @@ export default function BuyersPage() {
                   25M<span>+</span>
                 </strong>
                 <em>Happy user</em>
-              </div>
+              </div> */}
             </div>
 
             <div className="buyers-page__consultancies-media">

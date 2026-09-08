@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 
 const words = [
   "Carbon Markets With Transparency",
-  "Climate Action Through Real Impact With Transparency",
-  "Sustainable Growth For Organizations With Transparency",
-  "Trusted Environmental Finance With Transparency",
+  "Climate Action Through Real Impact",
+  "Sustainable Growth For Organizations",
+  "Trusted Environmental Finance",
 ];
 
 export function RotatingText() {
