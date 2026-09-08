@@ -1,0 +1,470 @@
+.eaas-page {
+  background: #f7f7f2;
+  color: #101e07;
+  font-family: "Inter", sans-serif;
+}
+
+.eaas-page__pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.eaas-page__pill--dark {
+  background: rgba(16, 30, 7, 0.06);
+  color: #166534;
+}
+
+/* Hero */
+
+.eaas-page__hero {
+  /* background:
+    linear-gradient(#05220e08 0%, #05220e1f 55%, #05220e5c 100%),
+    linear-gradient(90deg, #05220e2e 0%, #05220e14 44%, #05220e05 100%);
+  position: absolute;
+  inset: 0;
+  display: block; */
+  position: relative;
+  background: #101e07;
+}
+
+.eaas-page__hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5, 34, 14, 0.03) 0%,
+      rgba(5, 34, 14, 0.12) 55%,
+      rgba(5, 34, 14, 0.36) 100%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(5, 34, 14, 0.18) 0%,
+      rgba(5, 34, 14, 0.08) 44%,
+      rgba(5, 34, 14, 0.02) 100%
+    );
+}
+
+/* .buyers-page__hero-overlay {
+    background: linear-gradient(#05220e08 0%, #05220e1f 55%, #05220e5c 100%), linear-gradient(90deg, #05220e2e 0%, #05220e14 44%, #05220e05 100%);
+    position: absolute;
+    inset: 0;
+} */
+
+.eaas-page__hero-container {
+  position: absolute;
+  bottom: clamp(52px, 8vh, 88px);
+  left: clamp(32px, 4vw, 58px);
+  right: 24px;
+  max-width: 760px;
+}
+
+.eaas-page__hero-title {
+  font-size: clamp(32px, 4.4vw, 52px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 8px 0 0;
+}
+
+.eaas-page__hero-subtext {
+  font-size: 19px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.86);
+  margin: 0;
+}
+
+.eaas-page__hero-body {
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.68);
+  margin: 0;
+}
+
+.eaas-page__hero-cta {
+  margin-top: 8px;
+}
+
+.eaas-page__hero-tagline {
+  margin: 4px 0 0;
+  font-size: 14px;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* Problem / positioning */
+
+.eaas-page__problem {
+  padding: 44px 0;
+}
+
+.eaas-page__problem-container {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 20px;
+  max-width: 90vw;
+  margin: 0 auto;
+}
+
+.eaas-page__problem-container > div > * {
+  margin: 20px 0;
+}
+
+@media (max-width: 1024px) {
+  .eaas-page__problem-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .eaas-page__problem-image-container img {
+    display: none;
+  }
+}
+
+.eaas-page__problem-image-container {
+  margin: auto 0;
+  box-shadow: 0 18px 40px rgba(16, 30, 7, 0.06);
+}
+
+.eaas-page__problem-image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.eaas-page__problem-title {
+  font-size: clamp(26px, 3.2vw, 38px);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 4px 0 0;
+}
+
+.eaas-page__problem-body {
+  font-size: 17px;
+  line-height: 1.65;
+  color: #4b5a41;
+  margin: 0;
+}
+
+.eaas-page__problem-body strong {
+  color: #101e07;
+}
+
+.eaas-page__change-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.eaas-page__change-list li {
+  border-radius: 999px;
+  border: 1px solid rgba(16, 30, 7, 0.14);
+  background: #ffffff;
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #166534;
+}
+
+.eaas-page__problem-highlight {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #101e07;
+  border-left: 3px solid #166534;
+  padding-left: 18px;
+  margin: 8px 0 0;
+}
+
+/* Shared section title */
+
+.eaas-page__section-title {
+  font-size: clamp(26px, 3.2vw, 38px);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 10px 0 40px;
+  max-width: 620px;
+}
+
+/* Process (Diagnose / Engineer / Execute) */
+
+.eaas-page__process {
+  background: #e7edea;
+  padding: 88px 0;
+}
+
+.eaas-page__process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.eaas-page__process-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 32px 28px;
+  box-shadow: 0 18px 40px rgba(16, 30, 7, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.eaas-page__process-number {
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(16, 30, 7, 0.32);
+  letter-spacing: 0.06em;
+}
+
+.eaas-page__process-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.eaas-page__process-card > p {
+  font-size: 15px;
+  line-height: 1.55;
+  color: #6b7280;
+  margin: 0;
+}
+
+.eaas-page__process-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.eaas-page__process-tags span {
+  font-size: 12px;
+  font-weight: 600;
+  color: #166534;
+  background: rgba(22, 101, 52, 0.08);
+  border-radius: 999px;
+  padding: 5px 12px;
+}
+
+/* Outcomes */
+
+.eaas-page__outcomes {
+  padding: 88px 0;
+}
+
+.eaas-page__outcomes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.eaas-page__outcome-card {
+  background: #ffffff;
+  border: 1px solid rgba(16, 30, 7, 0.08);
+  border-radius: 18px;
+  padding: 26px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.eaas-page__outcome-card img {
+  width: 28px;
+  height: 28px;
+}
+
+.eaas-page__outcome-card h3 {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.eaas-page__outcome-card p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Values checklist */
+
+.eaas-page__values {
+  background: #101e07;
+  padding: 88px 0;
+}
+
+.eaas-page__values .eaas-page__section-title {
+  color: #ffffff;
+}
+
+.eaas-page__values-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px 40px;
+}
+
+.eaas-page__value-row {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.eaas-page__value-check {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(22, 163, 74, 0.18);
+  color: #4ade80;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.eaas-page__value-check svg {
+  width: 15px;
+  height: 15px;
+}
+
+.eaas-page__value-row h3 {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #ffffff;
+  margin: 0 0 4px;
+}
+
+.eaas-page__value-row p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.64);
+  margin: 0;
+}
+
+/* Closing CTA */
+
+.eaas-page__cta {
+  padding: 96px 0;
+}
+
+.eaas-page__cta-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  max-width: 640px;
+}
+
+.eaas-page__cta h2 {
+  font-size: clamp(26px, 3.2vw, 36px);
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.eaas-page__cta > .eaas-page__cta-container > p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #6b7280;
+  margin: 0;
+}
+
+.eaas-page__cta-buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.eaas-page__cta-or {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.eaas-page__cta-contacts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 16px;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.eaas-page__cta-contacts a {
+  color: #166534;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.eaas-page__cta-contacts span {
+  color: #6b7280;
+}
+
+.eaas-page__cta-note {
+  font-size: 13px;
+  font-style: italic;
+  color: #9ca3af;
+  margin: 4px 0 0;
+}
+
+/* Closing tagline strip */
+
+.eaas-page__strip {
+  background: #166534;
+  padding: 28px 0;
+}
+
+.eaas-page__strip-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 28px;
+}
+
+.eaas-page__strip-container span {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.01em;
+}
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+  .eaas-page__process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .eaas-page__outcomes-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .eaas-page__values-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .eaas-page__outcomes-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -26,6 +26,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.className}>
+      <head>
+        <meta name="apple-mobile-web-app-title" content="Kaia" />
+      </head>
       <body className="bg-white text-black antialiased">
         <div id="root">
           <div className="min-h-screen bg-background">

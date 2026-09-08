@@ -5,9 +5,10 @@ export interface NavigationItem {
 
 export const navigationItems: NavigationItem[] = [
   { label: "Home", path: "/" },
-  { label: "About Us", path: "/about" },
-  { label: "For Buyers", path: "/for/buyers" },
-  { label: "For Sellers", path: "/for/sellers" },
+  { label: "About", path: "/about" },
+  { label: "Engineering", path: "/engineering" },
+  { label: "Buyers", path: "/for/buyers" },
+  { label: "Sellers", path: "/for/sellers" },
   { label: "Marketplace", path: "/marketplace" },
 ];
 

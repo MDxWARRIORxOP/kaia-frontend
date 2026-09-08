@@ -222,7 +222,7 @@ export default function BuyersPage() {
           </span>
         </div>
         <div className="buyers-page__hero-content">
-          <span className="buyers-page__hero-pill">Buy Carbon Credits</span>
+          {/* <span className="buyers-page__hero-pill">Buy Carbon Credits</span> */}
           <h1>
             Source <span>Credits</span> That
             <br />
