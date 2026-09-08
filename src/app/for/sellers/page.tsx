@@ -174,7 +174,7 @@ function SectionEyebrow({ children }: { children: string }) {
 }
 
 export default function SellersPage() {
-  const [activeStep, setActiveStep] = useState(3);
+  const [activeStep, setActiveStep] = useState(0);
 
   return (
     <div className="sellers-page">

@@ -46,8 +46,8 @@ export function TestimonialsSection() {
           </h2>
 
           <p className="testimonials-section__subtext">
-            From Enterprises To Climate Consultants, Teams Use KAIA To Simplify
-            Carbon Markets And Deliver Measurable Results.
+            From enterprises to climate consultants, teams use KAIA to simplify
+            carbon markets and deliver measurable results.
           </p>
         </div>
 

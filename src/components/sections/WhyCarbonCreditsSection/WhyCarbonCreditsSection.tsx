@@ -6,29 +6,29 @@ import "./WhyCarbonCreditsSection.css";
 
 const bulletPoints = [
   {
-    lead: "Nature-Based Solutions Could Deliver Up To ",
-    emphasis: "37% Of Required Climate Mitigation",
-    tail: " By 2030",
+    lead: "Nature-based solutions could deliver up to ",
+    emphasis: "37% of required climate mitigation",
+    tail: " by 2030",
   },
   {
-    lead: "Renewable Energy Could Reduce Up To ",
-    emphasis: "70% Of Global Emissions",
-    tail: " By 2050",
+    lead: "Renewable energy could reduce up to ",
+    emphasis: "70% of global emissions",
+    tail: " by 2050",
   },
   {
-    lead: "Carbon Removal Will Be Essential To Reach ",
-    emphasis: "Net-Zero Emissions",
-    tail: " Globally",
+    lead: "Carbon removal will be essential to reach ",
+    emphasis: "net-zero emissions",
+    tail: " globally",
   },
   {
     lead: "Over ",
-    emphasis: "90% Of Global Companies",
-    tail: " Have Committed To Net-Zero Targets",
+    emphasis: "90% of global companies",
+    tail: " have committed to net-zero targets",
   },
   {
     lead: "",
-    emphasis: "Carbon Credits",
-    tail: " Enable Organizations To Act Immediately, Even Before Full Decarbonization",
+    emphasis: "Carbon credits",
+    tail: " enable organizations to act immediately, even before full decarbonization",
   },
 ];
 
@@ -75,10 +75,10 @@ export function WhyCarbonCreditsSection() {
             </h2>
 
             <p className="why-carbon-credits__intro">
-              Carbon Credits Represent One Tonne Of CO&#8322; Reduced Or Removed
-              From The Atmosphere. They Allow Organizations To Take
-              Responsibility For Emissions That Cannot Yet Be Eliminated, While
-              Funding Projects That Actively Restore Environmental Balance.
+              Carbon credits represent one tonne of CO&#8322; reduced or removed
+              from the atmosphere. They allow organizations to take
+              responsibility for emissions that cannot yet be eliminated, while
+              funding projects that actively restore environmental balance.
             </p>
 
             <ul

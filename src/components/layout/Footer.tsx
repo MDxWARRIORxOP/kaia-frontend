@@ -6,7 +6,11 @@ import { Button } from "../ui/Button";
 import { Container } from "../ui/Container";
 import { Input } from "../ui/Input";
 
-const socialLinks = ["FB", "IN", "IG"];
+const socialLinks = [
+  // { label: "FB", url: "https://facebook.com" }, no facebook page yet
+  { label: "IN", url: "https://www.linkedin.com/company/kaia-karbon" },
+  { label: "IG", url: "https://www.instagram.com/kaia.karbon/" },
+];
 
 export function Footer() {
   return (
@@ -20,8 +24,8 @@ export function Footer() {
               className="h-[50px] w-auto"
             />
             <p className="mt-4 text-[16px] font-medium leading-[24px] text-white/80">
-              Stay informed with updates, industry insights, and exclusive
-              Ecoriz offers.
+              Stay informed with updates, industry insights, and exclusive KAIA
+              offers.
             </p>
 
             <form className="mt-4 flex flex-col gap-2.5 sm:flex-row sm:items-center">
@@ -39,15 +43,16 @@ export function Footer() {
               </Button>
             </form>
 
+            {/* TODO: replace "/" with real social profile URLs */}
             <div className="mt-4 flex items-center gap-3">
               {socialLinks.map((item) => (
                 <Link
-                  key={item}
-                  href="/"
-                  aria-label={item}
+                  key={item.label}
+                  href={item.url}
+                  aria-label={item.label}
                   className="inline-flex h-[39px] w-[39px] items-center justify-center rounded-full border border-white/20 text-[16px] font-medium leading-6 text-white/80 transition-colors duration-200 hover:border-white/35 hover:text-white/80"
                 >
-                  {item}
+                  {item.label}
                 </Link>
               ))}
             </div>

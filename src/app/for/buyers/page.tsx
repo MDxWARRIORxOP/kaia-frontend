@@ -2,26 +2,6 @@
 
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import Link from "next/link";
-
-// import buyerConsultanciesImage from "../assets/images/buyer_for_consultancies.svg";
-// import buyerHeroImage from "../assets/images/Buyer_main_image.svg";
-// import buyerBenefitImage from "../assets/images/buyer_section3.svg";
-// import buyerFeatureShieldIcon from "../assets/images/shield_buyer_icon.svg";
-// import buyerMarketplaceImage from "../assets/images/buyer_section4.svg";
-// import buyerJourneyImage from "../assets/images/buyer_section5.svg";
-// import projectAmazonImage from "../assets/images/buyer_section6_1.svg";
-// import projectRajasthanImage from "../assets/images/buyer_section6_2.svg";
-// import projectKenyaImage from "../assets/images/buyer_section6_3.svg";
-// import marketplaceMangroveImage from "../assets/images/mangrove_small_buyer.svg";
-// import ctaImage from "../assets/images/AboutUs4.svg";
-// import buyerNeonLeafIcon from "../assets/neon_green_leaf_icon_buyer.svg";
-// import buyerFeatureThunderIcon from "../assets/akar-icons_thunder.svg";
-// import goldenLeafIcon from "../assets/goldenleaf_small.svg";
-// import buyerFeatureHandshakeIcon from "../assets/material-symbols-light_handshake-outline-rounded.svg";
-// import buyersConsultanciesIcon from "../assets/env_icon_buyers.svg";
-// import buyersEnterpriseIcon from "../assets/notes_icon_buyers.svg";
-// import buyersAccountingIcon from "../assets/notepad_icon_buyers.svg";
-// import buyersLeafIcon from "../assets/leaf_border_aboutus_icon.svg";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { cn } from "@/lib/cn";
@@ -93,33 +73,6 @@ const stats = [
   { value: "16+", label: "Countries" },
   { value: "8M+", label: "Tonnes Retired" },
   { value: "415+", label: "Corporate Buyers" },
-];
-
-const projects = [
-  {
-    image: "/images/buyerSection6_1.svg",
-    tag: "Nature-Based",
-    location: "Pará, Brazil",
-    name: "Amazon Rainforest Conservation",
-    metadata: ["Verra VCS", "REDD+", "1.2M tCO2"],
-    price: "$15.00",
-  },
-  {
-    image: "/images/buyerSection6_2.svg",
-    tag: "Nature-Based",
-    location: "Rajasthan, India",
-    name: "Rajasthan Solar Farm Development",
-    metadata: ["Gold Standard", "REDD+", "850K tCO2"],
-    price: "$8.50",
-  },
-  {
-    image: "/images/buyerSection6_3.svg",
-    tag: "Health",
-    location: "Pará, Brazil",
-    name: "Kenya Clean Cookstoves Initiative",
-    metadata: ["Household Energy", "340K tCO2e"],
-    price: "$18.00",
-  },
 ];
 
 const marketplaceFeatures = [
@@ -306,7 +259,7 @@ export default function BuyersPage() {
                 </Button>
               </Link>
               <span className="buyers-page__supporting-text">
-                Supporting ESG Leaders And Sustainability Teams Globally
+                Supporting ESG leaders and sustainability teams globally
               </span>
               <div className="buyers-page__users-row">
                 <span />
@@ -629,14 +582,18 @@ export default function BuyersPage() {
                     <span>{project.standard}</span>
                     <span>{project.vintage}</span>
                   </div>
-                  <div
-                    className="buyers-page__project-divider"
-                    aria-hidden="true"
-                  />
-                  <div className="buyers-page__project-price">
-                    <span>Price per tonne</span>
-                    <strong>{project.price}</strong>
-                  </div>
+                  {project.price ? (
+                    <>
+                      <div
+                        className="buyers-page__project-divider"
+                        aria-hidden="true"
+                      />
+                      <div className="buyers-page__project-price">
+                        <span>Price per tonne</span>
+                        <strong>{project.price}</strong>
+                      </div>
+                    </>
+                  ) : null}
                 </div>
               </article>
             ))}
@@ -666,8 +623,8 @@ export default function BuyersPage() {
           <span className="buyers-page__cta-kicker" aria-hidden="true" />
           <h2>Ready To Make Your Climate Commitment Count?</h2>
           <p>
-            Join Organizations Already Using KAIA To Buy, Sell, And Retire
-            Carbon Credits With Confidence.
+            Join organizations already using KAIA to buy, sell, and retire
+            carbon credits with confidence.
           </p>
 
           <div className="buyers-page__cta-actions">

@@ -341,10 +341,12 @@ export default function MarketplacePage() {
                       ) : null}
                       <span>{project.volume}</span>
                     </p>
-                    <div className="marketplace-page__project-price">
-                      <span>Price per tonne</span>
-                      <strong>{project.price}</strong>
-                    </div>
+                    {project.price ? (
+                      <div className="marketplace-page__project-price">
+                        <span>Price per tonne</span>
+                        <strong>{project.price}</strong>
+                      </div>
+                    ) : null}
                   </div>
                 </article>
               ))}

@@ -35,9 +35,9 @@ export function ClimateConfidenceSection() {
             </h2>
 
             <p className="climate-confidence__intro">
-              Navigating Carbon Markets Is Complex. KAIA Gives You The Clarity,
-              Data, And Access Needed To Make Informed, High-Impact Decisions
-              Without Uncertainty.
+              Navigating carbon markets is complex. KAIA gives you the clarity,
+              data, and access needed to make informed, high-impact decisions
+              without uncertainty.
             </p>
           </div>
 

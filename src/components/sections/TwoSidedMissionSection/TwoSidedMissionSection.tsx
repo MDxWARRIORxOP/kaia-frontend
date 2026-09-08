@@ -104,9 +104,9 @@ export function TwoSidedMissionSection() {
           </h2>
 
           <p className="two-sided-mission__subtext">
-            Whether You&apos;re Looking To Offset Your Carbon Footprint Or
-            Monetize Your Environmental Projects, KAIA Has The Infrastructure
-            You Need.
+            Whether you&apos;re looking to offset your carbon footprint or
+            monetize your environmental projects, KAIA has the infrastructure
+            you need.
           </p>
         </div>
 

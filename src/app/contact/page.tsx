@@ -51,44 +51,6 @@ const fieldRows: ContactField[][] = [
   ],
 ];
 
-const testimonials = [
-  {
-    quote:
-      "KAIA gave us clarity in a space that usually feels opaque. We were able to purchase and retire carbon credits with full confidence, knowing every transaction was transparent and verifiable.",
-    name: "Head of Sustainability",
-    company: "Global Manufacturing Company",
-    avatar: "/images/testimonial1.png",
-  },
-  {
-    quote:
-      "The team helped us compare verified projects quickly and make a confident purchase decision without the usual back-and-forth.",
-    name: "Climate Strategy Lead",
-    company: "Enterprise Consulting Group",
-    avatar: "/images/testimonial1.png",
-  },
-  {
-    quote:
-      "Listing our project was simple, and KAIA brought serious buyers into the conversation much faster than our previous channels.",
-    name: "Project Development Director",
-    company: "Nature Restoration Partner",
-    avatar: "/images/testimonial1.png",
-  },
-  {
-    quote:
-      "We finally have a clean way to track climate procurement conversations, credit quality, and retirement proof in one workflow.",
-    name: "ESG Operations Manager",
-    company: "Regional Retail Network",
-    avatar: "/images/testimonial1.png",
-  },
-  {
-    quote:
-      "KAIA reduced the friction in carbon buying for our clients and gave our advisory team the transparency we needed.",
-    name: "Carbon Markets Advisor",
-    company: "Sustainability Advisory Firm",
-    avatar: "/images/testimonial1.png",
-  },
-];
-
 function IconMail() {
   return (
     <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
@@ -178,21 +140,7 @@ function IconArrowRight() {
 }
 
 export default function ContactUsPage() {
-  const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [active, setActive] = useState(0);
-  const testimonial = testimonials[activeTestimonial];
-
-  const goToPreviousTestimonial = () => {
-    setActiveTestimonial((current) =>
-      current === 0 ? testimonials.length - 1 : current - 1,
-    );
-  };
-
-  const goToNextTestimonial = () => {
-    setActiveTestimonial((current) =>
-      current === testimonials.length - 1 ? 0 : current + 1,
-    );
-  };
 
   return (
     <div className="contact-page">
@@ -281,7 +229,7 @@ export default function ContactUsPage() {
             >
               <button
                 type="button"
-                className={`contact-page__path-button contact-page__path-button${active === 0 && "--active"}`}
+                className={`contact-page__path-button contact-page__path-button${active === 0 ? "--active" : ""}`}
                 onClick={() => {
                   setActive(0);
                 }}
@@ -290,7 +238,7 @@ export default function ContactUsPage() {
               </button>
               <button
                 type="button"
-                className={`contact-page__path-button contact-page__path-button${active === 1 && "--active"}`}
+                className={`contact-page__path-button contact-page__path-button${active === 1 ? "--active" : ""}`}
                 onClick={() => {
                   setActive(1);
                 }}
@@ -354,78 +302,12 @@ export default function ContactUsPage() {
               <span>Real Climate Impact.</span>
             </h2>
             <p>
-              From Enterprises To Climate Consultants, Teams Use KAIA To
-              Simplify Carbon Markets And Deliver Measurable Results.
+              From enterprises to climate consultants, teams use KAIA to
+              simplify carbon markets and deliver measurable results.
             </p>
           </div>
 
           <div className="contact-page__trusted-stage">
-            <article className="contact-page__testimonial">
-              <p>{testimonial.quote}</p>
-
-              <div className="contact-page__testimonial-author">
-                <img src={testimonial.avatar} alt={testimonial.name} />
-                <div>
-                  <strong>{testimonial.name}</strong>
-                  <span>{testimonial.company}</span>
-                </div>
-              </div>
-            </article>
-
-            <div
-              className="contact-page__slider-controls"
-              aria-label="Testimonials"
-            >
-              <button
-                type="button"
-                className="contact-page__slider-button"
-                onClick={goToPreviousTestimonial}
-                aria-label="Previous testimonial"
-              >
-                <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
-                  <path
-                    d="M11.25 4.5L6.75 9L11.25 13.5"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
-              <button
-                type="button"
-                className="contact-page__slider-button contact-page__slider-button--active"
-                onClick={goToNextTestimonial}
-                aria-label="Next testimonial"
-              >
-                <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
-                  <path
-                    d="M6.75 4.5L11.25 9L6.75 13.5"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
-              <span className="contact-page__slider-dots">
-                {testimonials.map((item, index) => (
-                  <button
-                    type="button"
-                    key={item.name}
-                    className={
-                      activeTestimonial === index
-                        ? "contact-page__slider-dot contact-page__slider-dot--active"
-                        : "contact-page__slider-dot"
-                    }
-                    onClick={() => setActiveTestimonial(index)}
-                    aria-label={`Show testimonial ${index + 1}`}
-                    aria-current={activeTestimonial === index}
-                  />
-                ))}
-              </span>
-            </div>
-
             <div className="contact-page__map" aria-hidden="true">
               <img src={"/images/mapImage.png"} alt="" />
               <span className="contact-page__map-pin contact-page__map-pin--one" />

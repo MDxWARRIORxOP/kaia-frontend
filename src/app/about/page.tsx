@@ -73,7 +73,7 @@ const valueCards = [
     title: "Impact First",
     description:
       "We prioritize projects that deliver measurable co-benefits - biodiversity, community development, clean water.",
-    icon: "/icons/leaf_border_aboutus.svg",
+    icon: "/icons/leafBorderIcon.svg",
   },
   {
     title: "Community Driven",
@@ -114,6 +114,7 @@ const infrastructureCards = [
   },
 ];
 
+// TODO: replace with the real team — names, roles, bios, and photos
 const teamMembers = [
   {
     name: "Aryan Kapoor",
@@ -488,8 +489,8 @@ export default function AboutUsPage() {
             <span className="about-page__cta-kicker" aria-hidden="true" />
             <h2>Ready To Make Your Climate Commitment Count?</h2>
             <p>
-              Join Organizations Already Using KAIA To Buy, Sell, And Retire
-              Carbon Credits With Confidence.
+              Join organizations already using KAIA to buy, sell, and retire
+              carbon credits with confidence.
             </p>
 
             <div className="about-page__cta-actions">
@@ -572,6 +573,7 @@ export default function AboutUsPage() {
                   <span>{member.role}</span>
                   <p>{member.description}</p>
                 </div>
+                {/* TODO: replace "/" with this team member's real LinkedIn URL */}
                 <Link href="/" className="about-page__team-link">
                   <img
                     src={"/icons/linkedin.svg"}
