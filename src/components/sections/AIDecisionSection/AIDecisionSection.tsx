@@ -5,12 +5,7 @@ import { MarqueeStrip } from "../../ui/MarqueeStrip";
 
 import "./AIDecisionSection.css";
 
-const marqueeItems = [
-  "Verified Impact",
-  "Blockchain Verified",
-  "Carbon Credits",
-  "Verified Projects",
-];
+const marqueeItems = ["Verified Impact", "Carbon Credits", "Verified Projects"];
 
 const stripIcons = ["/icons/halfLeaf.svg", "/icons/fullLeaf.svg"];
 
@@ -31,18 +26,21 @@ export function AIDecisionSection() {
                 className="ai-decision-panel__heading"
               >
                 <span className="ai-decision-panel__heading-line">
-                  Smarter Carbon Decisions,
+                  Smarter Carbon Strategy,
                 </span>
                 <span className="ai-decision-panel__heading-line">
-                  Powered by{" "}
-                  <span className="ai-decision-panel__heading-accent">AI</span>
+                  Built Around Your{" "}
+                  <span className="ai-decision-panel__heading-accent">
+                    Product
+                  </span>
                 </span>
               </h2>
 
               <p className="ai-decision-panel__subtext">
-                Navigating carbon markets can be complex. KAIA uses intelligent
-                systems to help you discover the right projects, evaluate
-                impact, and transact with confidence.
+                Navigating carbon markets can be complex. KAIA helps you design
+                offsetting and insetting strategies tailored to your product and
+                operations, so climate action fits how your business actually
+                works.
               </p>
               <Link href="/contact">
                 <Button className="ai-decision-panel__button">
@@ -60,8 +58,8 @@ export function AIDecisionSection() {
               />
 
               <p className="ai-decision-panel__card-text">
-                From selection to settlement, AI helps you move faster with
-                clarity and precision.
+                From product development to portfolio retirement, KAIA helps you
+                move faster with clarity and precision.
               </p>
             </aside>
           </div>

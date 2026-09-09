@@ -8,6 +8,18 @@ import { PlatformHighlights } from "@/components/sections/PlatformHighlights/Pla
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection/TestimonialsSection";
 import { TwoSidedMissionSection } from "@/components/sections/TwoSidedMissionSection/TwoSidedMissionSection";
 import { WhyCarbonCreditsSection } from "@/components/sections/WhyCarbonCreditsSection/WhyCarbonCreditsSection";
+import { MarqueeStrip } from "@/components/ui/MarqueeStrip";
+
+// import "./page.css";
+
+const marqueeItems = [
+  "Verified Impact",
+  "Blockchain Verified",
+  "Carbon Credits",
+  "Verified Projects",
+];
+
+const stripIcons = ["/icons/halfLeaf.svg", "/icons/fullLeaf.svg"];
 
 export default function HomePage() {
   return (
@@ -16,6 +28,24 @@ export default function HomePage() {
       <PlatformHighlights />
       <GuideSection />
       <AIDecisionSection />
+      <MarqueeStrip
+        items={marqueeItems}
+        ariaLabel="Verified carbon intelligence highlights"
+        className="ai-decision-strip"
+        contentClassName="ai-decision-strip__content"
+        itemClassName="ai-decision-strip__item"
+        renderItem={(item, index) => (
+          <>
+            <img
+              src={stripIcons[index % stripIcons.length]}
+              alt=""
+              aria-hidden="true"
+              className="ai-decision-strip__icon"
+            />
+            <span className="ai-decision-strip__label">{item}</span>
+          </>
+        )}
+      />
       <WhyCarbonCreditsSection />
       <ClimateConfidenceSection />
       <TwoSidedMissionSection />

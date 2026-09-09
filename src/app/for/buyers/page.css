@@ -1129,32 +1129,36 @@
   object-fit: cover;
 }
 
-.buyers-page__stats {
-  padding: 48px 0;
-  background: #dba94e;
+.buyers-page__stats-strip {
+  background: #188147;
 }
 
-.buyers-page__stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  text-align: center;
+.buyers-page__stats-strip-content {
+  gap: 0;
+  padding: 22px 0;
 }
 
-.buyers-page__stats strong {
-  display: block;
-  color: #122414;
-  font-size: 38px;
+.buyers-page__stats-strip-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding-right: 48px;
+}
+
+.buyers-page__stats-strip-item strong {
+  color: #ffffff;
+  font-size: 28px;
   font-weight: 800;
   line-height: 1;
 }
 
-.buyers-page__stats span {
-  display: block;
-  margin-top: 8px;
-  color: rgba(16, 36, 18, 0.78);
-  font-size: 12px;
-  font-weight: 700;
+.buyers-page__stats-strip-item span {
+  color: rgba(247, 248, 244, 0.82);
+  font-size: 14px;
+  font-weight: 600;
   text-transform: uppercase;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
 .buyers-page__catalogue {
@@ -1532,8 +1536,7 @@
     grid-template-columns: 1fr;
   }
 
-  .buyers-page__feature-row,
-  .buyers-page__stats-grid {
+  .buyers-page__feature-row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 28px;
   }
@@ -1650,7 +1653,6 @@
     font-size: 34px;
   }
 
-  .buyers-page__stats-grid,
   .buyers-page__feature-row {
     grid-template-columns: 1fr;
   }

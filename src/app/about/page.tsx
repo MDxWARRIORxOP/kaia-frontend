@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { KaiaEcosystemSection } from "@/components/sections/KaiaEcosystemSection/KaiaEcosystemSection";
 import { cn } from "@/lib/cn";
 
 import "./page.css";
@@ -28,12 +29,12 @@ const missionPoints = [
   },
   {
     eyebrow: "The Solution",
-    title: "KAIA: infrastructure that bridges both sides",
+    title: "KAIA: The connective layer between developers and buyers",
     description:
-      "We built the connective tissue - a marketplace, a protocol, and an API layer - that connects verified project developers directly with corporate buyers, consultancies, and individuals.",
+      "We built a verified marketplace and engineering-backed evaluation layer that connects project developers directly with corporate buyers and organisations - cutting out brokers, delays, and pricing opacity.",
     highlight:
-      "150+ projects · 38 countries · instant on-chain settlement · no intermediaries",
-  },
+      "12,500+ carbon credits sold · verified projects · direct access · no intermediaries",
+  }, // TODO: replace with something more feasible
   {
     eyebrow: "Today & Beyond",
     title: "From idea to measurable environmental impact",
@@ -83,6 +84,7 @@ const valueCards = [
   },
 ];
 
+/* Old infrastructure section — kept for reference, replaced by KaiaEcosystemSection below.
 const infrastructureCards = [
   {
     index: "01",
@@ -113,6 +115,7 @@ const infrastructureCards = [
     linkLabel: "Read the API docs",
   },
 ];
+*/
 
 // TODO: replace with the real team — names, roles, bios, and photos
 const teamMembers = [
@@ -186,7 +189,7 @@ export default function AboutUsPage() {
             <h1 className="about-page__hero-title">
               Building The Future Of
               <br />
-              Climate Commerce
+              Climate Tech
             </h1>
             <p className="about-page__hero-copy">
               KAIA was built on a simple realization: while the world is rapidly
@@ -310,7 +313,7 @@ export default function AboutUsPage() {
                   now evolving into a platform focused on enabling real,
                   measurable environmental impact."
                 </p>
-                <footer>KAIA FOUNDER</footer>
+                <footer>ADITYA YADAV · KAIA FOUNDER</footer>
               </blockquote>
             </div>
 
@@ -407,6 +410,7 @@ export default function AboutUsPage() {
         </Container>
       </section>
 
+      {/* Old infrastructure section — kept for reference, replaced by KaiaEcosystemSection below.
       <section className="about-page__infrastructure">
         <Container>
           <div className="about-page__infrastructure-header">
@@ -470,6 +474,9 @@ export default function AboutUsPage() {
           </div>
         </Container>
       </section>
+      */}
+
+      <KaiaEcosystemSection />
 
       <section className="about-page__cta">
         <div className="about-page__cta-frame">
@@ -545,7 +552,7 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      <section className="about-page__section about-page__section--team">
+      {/* <section className="about-page__section about-page__section--team">
         <Container>
           <div className="about-page__team-header">
             <SectionEyebrow>The Team</SectionEyebrow>
@@ -573,7 +580,7 @@ export default function AboutUsPage() {
                   <span>{member.role}</span>
                   <p>{member.description}</p>
                 </div>
-                {/* TODO: replace "/" with this team member's real LinkedIn URL */}
+                TODO: replace "/" with this team member's real LinkedIn URL 
                 <Link href="/" className="about-page__team-link">
                   <img
                     src={"/icons/linkedin.svg"}
@@ -587,7 +594,7 @@ export default function AboutUsPage() {
             ))}
           </div>
         </Container>
-      </section>
+      </section> */}
     </div>
   );
 }

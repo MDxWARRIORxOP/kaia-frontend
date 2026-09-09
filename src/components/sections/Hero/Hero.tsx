@@ -103,15 +103,22 @@ export function Hero() {
             developers, and individuals alike.
           </p>
 
-          <div className="hero-buttons">
+          <div className="hero-buttons top-margin__hero">
             <Link href="/for/buyers">
               <Button className="hero-button hero-button--primary">
                 Buy Carbon Credits &rarr;
               </Button>
             </Link>
-            <Link href="/marketplace">
+            <Link href="/for/sellers">
               <Button className="hero-button hero-button--secondary">
-                Explore Marketplace &rarr;
+                List Your Project &rarr;
+              </Button>
+            </Link>
+          </div>
+          <div className="hero-buttons">
+            <Link href="/engineering">
+              <Button className="hero-button hero-button--secondary">
+                Engineering Services &rarr;
               </Button>
             </Link>
           </div>

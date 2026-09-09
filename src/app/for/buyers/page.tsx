@@ -4,6 +4,7 @@ import { useEffect, useRef, useState, type CSSProperties } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { MarqueeStrip } from "@/components/ui/MarqueeStrip";
 import { cn } from "@/lib/cn";
 
 import "./page.css";
@@ -17,8 +18,8 @@ const serviceCards = [
       "Build net-zero commitments with verified credits that withstand scrutiny from regulators and stakeholders.",
   },
   {
-    icon: "/images/buyerForConsultancies.svg",
-    title: "Environmental Consultancies",
+    icon: "/icons/buyerHandshake.svg",
+    title: "Environmental Organisations",
     description:
       "Source credits on behalf of your clients with full transparency on provenance, pricing, and retirement.",
   },
@@ -39,11 +40,10 @@ const serviceCards = [
 const journeySteps = [
   {
     number: "01",
-    title: "Create Your Account",
+    title: "Contact Us",
     description:
-      "Sign up in minutes and get access to our full project catalogue with detailed impact metrics and pricing.",
-    detail:
-      "Onboarding takes less than 5 minutes. No credit card required to browse.",
+      "Get in touch with our team and get access to our full project catalogue with detailed impact metrics and pricing.",
+    detail: "We'll respond within one business day to get you started.",
   },
   {
     number: "02",
@@ -69,10 +69,11 @@ const journeySteps = [
 ];
 
 const stats = [
-  { value: "124+", label: "Verified Projects" },
+  // { value: "124+", label: "Verified Projects" },
   { value: "16+", label: "Countries" },
+  { value: "20+", label: "Verified Registries" },
   { value: "8M+", label: "Tonnes Retired" },
-  { value: "415+", label: "Corporate Buyers" },
+  // { value: "415+", label: "Corporate Buyers" },
 ];
 
 const marketplaceFeatures = [
@@ -222,7 +223,7 @@ export default function BuyersPage() {
           </span>
         </div>
         <div className="buyers-page__hero-content">
-          {/* <span className="buyers-page__hero-pill">Buy Carbon Credits</span> */}
+          <span className="buyers-page__hero-pill">Buy Carbon Credits</span>
           <h1>
             Source <span>Credits</span> That
             <br />
@@ -240,17 +241,17 @@ export default function BuyersPage() {
         <Container className="buyers-page__consultancies-container">
           <div className="buyers-page__consultancies-grid">
             <div className="buyers-page__consultancies-copy">
-              <SectionEyebrow>For Consultancies</SectionEyebrow>
+              <SectionEyebrow>For Organisations</SectionEyebrow>
               <h2>
-                Built for Consultancies
+                Built for Organisations
                 <br />
                 <span>Driving Climate Action</span>
               </h2>
               <p>
-                KAIA empowers environmental consultants and carbon advisors to
-                seamlessly integrate carbon offsetting into their client
-                offerings, manage purchases, retire credits, and generate
-                reports, all from one platform.
+                KAIA empowers organisations and carbon advisors to seamlessly
+                integrate carbon offsetting into their client offerings, manage
+                purchases, retire credits, and generate reports, all from one
+                platform.
               </p>
               <Link href="/contact">
                 <Button className="buyers-page__green-button">
@@ -261,7 +262,7 @@ export default function BuyersPage() {
               <span className="buyers-page__supporting-text">
                 Supporting ESG leaders and sustainability teams globally
               </span>
-              {/* <div className="buyers-page__users-row">
+              <div className="buyers-page__users-row">
                 <span />
                 <span />
                 <span />
@@ -269,7 +270,7 @@ export default function BuyersPage() {
                   25M<span>+</span>
                 </strong>
                 <em>Happy user</em>
-              </div> */}
+              </div>
             </div>
 
             <div className="buyers-page__consultancies-media">
@@ -325,7 +326,7 @@ export default function BuyersPage() {
             <div className="buyers-page__benefit-copy">
               <span className="buyers-page__benefit-pill">
                 <span aria-hidden="true" />
-                Gold Standard · Verra VCS · Puro.earth verified
+                Gold Standard · Verra VCS · ICR verified · and more
               </span>
               <h2>
                 Every project on KAIA is pre-screened against the highest
@@ -416,12 +417,6 @@ export default function BuyersPage() {
                 carbon credits with full transparency and zero friction.
               </p>
               <div className="buyers-page__marketplace-actions">
-                <Link href="/marketplace">
-                  <Button className="buyers-page__green-button">
-                    Explore Marketplace
-                    <ArrowIcon />
-                  </Button>
-                </Link>
                 <Link href="/contact">
                   <Button
                     variant="secondary"
@@ -530,18 +525,19 @@ export default function BuyersPage() {
         </Container>
       </section>
 
-      <section className="buyers-page__stats">
-        <Container>
-          <div className="buyers-page__stats-grid">
-            {stats.map((item) => (
-              <div key={item.label}>
-                <strong>{item.value}</strong>
-                <span>{item.label}</span>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
+      <MarqueeStrip
+        items={stats}
+        ariaLabel="Buyer platform statistics"
+        className="buyers-page__stats-strip"
+        contentClassName="buyers-page__stats-strip-content"
+        itemClassName="buyers-page__stats-strip-item"
+        renderItem={(item) => (
+          <>
+            <strong>{item.value}</strong>
+            <span>{item.label}</span>
+          </>
+        )}
+      />
 
       <section className="buyers-page__catalogue">
         <Container>
@@ -599,8 +595,8 @@ export default function BuyersPage() {
             ))}
           </div>
 
-          <Link href="/marketplace" className="buyers-page__catalogue-link">
-            Explore KAIA Marketplace
+          <Link href="/contact" className="buyers-page__catalogue-link">
+            Contact Us
             <ArrowIcon />
           </Link>
         </Container>

@@ -45,8 +45,12 @@ const acceptedRegistries = [
     description: "Rigorous standards for climate and development impact",
   },
   {
-    title: "ACR",
-    description: "American Carbon Registry - leading offset program since 1996",
+    title: "ICR",
+    description: "Indian Carbon Registry - leading offset program since 2015",
+  },
+  {
+    title: "And More!",
+    description: "Additional registries and programs available",
   },
 ];
 
@@ -68,7 +72,7 @@ const lifecycleSteps = [
   },
   {
     number: "03",
-    title: "Verify(Auditing)",
+    title: "Verify (Auditing)",
     detail: "GOAL: PROVE THE CO2 IMPACT.",
     description:
       "Independent third-party auditors (VVBs) inspect the site and data to confirm actual emissions reduced or removed.",
@@ -452,10 +456,10 @@ export default function SellersPage() {
             <div className="sellers-page__consultancies-copy">
               <span className="sellers-page__consultancies-eyebrow">
                 <span />
-                For Consultancies
+                For Organisations
               </span>
               <h2>
-                Built for Consultancies
+                Built for Organisations
                 <br />
                 <span>Driving Climate Action</span>
               </h2>

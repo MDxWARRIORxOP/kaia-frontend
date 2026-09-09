@@ -1,0 +1,28 @@
+.marquee-strip {
+  overflow: hidden;
+}
+
+.marquee-strip__content {
+  display: flex;
+  width: max-content;
+  min-width: 100%;
+
+  animation: marqueeStripMove 26s linear infinite;
+}
+
+.marquee-strip__item {
+  flex-shrink: 0;
+  text-align: center;
+  gap: 0;
+  margin: auto 0;
+  padding: 0;
+}
+
+@keyframes marqueeStripMove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

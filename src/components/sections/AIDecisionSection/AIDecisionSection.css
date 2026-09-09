@@ -1,27 +1,3 @@
-.marquee-strip {
-  overflow: hidden;
-}
-
-.marquee-strip__content {
-  display: flex;
-  width: max-content;
-  min-width: 100%;
-  animation: marqueeStripMove 26s linear infinite;
-}
-
-.marquee-strip__item {
-  flex-shrink: 0;
-}
-
-@keyframes marqueeStripMove {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
 .ai-decision-section {
   --ai-bg: #f8f8f6;
   --ai-panel-bg: #091306;
@@ -36,7 +12,7 @@
   --ai-card-shadow: 0 30px 80px rgba(0, 0, 0, 0.24);
   --ai-panel-shadow: 0 30px 80px rgba(16, 30, 7, 0.08);
   background: var(--ai-bg);
-  padding: 46px 0 0;
+  padding: 0 0;
 }
 
 .ai-decision-section__container {
@@ -262,7 +238,6 @@
 .ai-decision-strip__item {
   display: inline-flex;
   align-items: center;
-  gap: 26px;
   padding-right: 36px;
 }
 
@@ -274,7 +249,7 @@
 
 .ai-decision-strip__label {
   color: #f7f8f4;
-  font-size: 24px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 500;
   line-height: 1;
@@ -359,6 +334,6 @@
   }
 
   .ai-decision-strip__label {
-    font-size: 18px;
+    font-size: 16px;
   }
 }

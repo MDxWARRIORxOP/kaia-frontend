@@ -17,7 +17,7 @@ const missionCards: MissionCard[] = [
   {
     eyebrow: "For Buyers",
     title: "Invest in credits that create real impact",
-    body: "Access 150+ verified carbon projects. Browse by methodology, geography, or vintage - and retire credits with full transparency.",
+    body: "Access 2,500+ carbon credits sold. Browse by methodology, geography, or vintage - and retire credits with full transparency.",
     cta: "Explore Buyer Platform",
     link: "/for/buyers",
     image: "/images/windmillSection7.svg",

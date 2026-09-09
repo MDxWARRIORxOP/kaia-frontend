@@ -5,8 +5,8 @@ import "./PlatformHighlights.css";
 const trustCardCopy = {
   title:
     "Trusted by forward-thinking climate leaders worldwide chosen by organizations driving real climate impact",
-  value: "150+",
-  label: "Verified Carbon Credits Projects",
+  value: "2,500+",
+  label: "Carbon Credits Sold",
 };
 
 const statCardCopy = {

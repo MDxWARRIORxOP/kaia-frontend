@@ -240,12 +240,31 @@
 
 .contact-page__path-toggle {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
   gap: 0;
   margin-bottom: 38px;
   border-radius: 999px;
   background: #edf2ef;
   padding: 0;
+}
+
+.contact-page__path-toggle > span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.contact-page__path-toggle > span > button {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
 }
 
 .contact-page__path-button {
@@ -283,6 +302,11 @@
   background: #0f7a3f;
   color: #ffffff;
   box-shadow: 0 16px 24px rgba(15, 122, 63, 0.28);
+}
+
+.contact-page__path-button--eaas.contact-page__path-button--active {
+  background: #0b4d47;
+  box-shadow: 0 16px 24px rgba(11, 77, 71, 0.32);
 }
 
 .contact-page__form-row {

@@ -366,7 +366,7 @@
 .sellers-page__lifecycle-step--left .sellers-page__lifecycle-step-content {
   grid-column: 1;
   justify-self: end;
-  width: 356px;
+  width: 100%;
   max-width: 356px;
   padding-left: 0;
   padding-right: 28px;
@@ -376,7 +376,7 @@
 .sellers-page__lifecycle-step--right .sellers-page__lifecycle-step-content {
   grid-column: 3;
   justify-self: start;
-  width: 356px;
+  width: 100%;
   max-width: 356px;
   padding-left: 18px;
   text-align: left;

@@ -51,6 +51,20 @@ const fieldRows: ContactField[][] = [
   ],
 ];
 
+function IconWrench() {
+  return (
+    <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+      <path
+        d="M11.5 3.5a3.25 3.25 0 0 0-4.31 3.62L3.5 10.8v2.2h2.2l3.68-3.69A3.25 3.25 0 0 0 13.5 5.9l-2.1 2.1-1.4-1.4 2.1-2.1-.6-1Z"
+        stroke="currentColor"
+        strokeWidth="1.3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 function IconMail() {
   return (
     <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
@@ -227,53 +241,66 @@ export default function ContactUsPage() {
               className="contact-page__path-toggle"
               aria-label="Contact reason"
             >
+              <span>
+                <button
+                  type="button"
+                  className={`contact-page__path-button contact-page__path-button${active === 0 ? "--active" : ""}`}
+                  onClick={() => {
+                    setActive(0);
+                  }}
+                >
+                  <IconCart />I want to buy credits
+                </button>
+                <button
+                  type="button"
+                  className={`contact-page__path-button contact-page__path-button${active === 1 ? "--active" : ""}`}
+                  onClick={() => {
+                    setActive(1);
+                  }}
+                >
+                  <img
+                    src={"/icons/singleBlackLeaf.svg"}
+                    alt=""
+                    aria-hidden="true"
+                  />
+                  I want to list a project
+                </button>
+              </span>
               <button
                 type="button"
-                className={`contact-page__path-button contact-page__path-button${active === 0 ? "--active" : ""}`}
+                className={`contact-page__path-button contact-page__path-button--eaas contact-page__path-button${active === 2 ? "--active" : ""}`}
                 onClick={() => {
-                  setActive(0);
+                  setActive(2);
                 }}
               >
-                <IconCart />I want to buy credits
-              </button>
-              <button
-                type="button"
-                className={`contact-page__path-button contact-page__path-button${active === 1 ? "--active" : ""}`}
-                onClick={() => {
-                  setActive(1);
-                }}
-              >
-                <img
-                  src={"/icons/singleBlackLeaf.svg"}
-                  alt=""
-                  aria-hidden="true"
-                />
-                I want to list a project
+                <IconWrench />I want engineering services
               </button>
             </div>
 
-            {fieldRows.map((row) => (
-              <div className="contact-page__form-row" key={row[0].id}>
-                {row.map((field) => (
-                  <label
-                    className={
-                      field.wide
-                        ? "contact-page__field contact-page__field--wide"
-                        : "contact-page__field"
-                    }
-                    htmlFor={field.id}
-                    key={field.id}
-                  >
-                    <span>{field.label}</span>
-                    <input
-                      id={field.id}
-                      type={field.type}
-                      placeholder={field.placeholder}
-                    />
-                  </label>
-                ))}
-              </div>
-            ))}
+            {fieldRows
+              .filter((row) => active !== 2 || row[0].id !== "volume")
+              .map((row) => (
+                <div className="contact-page__form-row" key={row[0].id}>
+                  {row.map((field) => (
+                    <label
+                      className={
+                        field.wide
+                          ? "contact-page__field contact-page__field--wide"
+                          : "contact-page__field"
+                      }
+                      htmlFor={field.id}
+                      key={field.id}
+                    >
+                      <span>{field.label}</span>
+                      <input
+                        id={field.id}
+                        type={field.type}
+                        placeholder={field.placeholder}
+                      />
+                    </label>
+                  ))}
+                </div>
+              ))}
 
             <label
               className="contact-page__field contact-page__field--wide"
@@ -287,7 +314,11 @@ export default function ContactUsPage() {
             </label>
 
             <Button type="submit" className="contact-page__submit">
-              Request Credits
+              {active === 0
+                ? "Request Credits"
+                : active === 1
+                  ? "List My Project"
+                  : "Request a Discovery Call"}
               <IconArrowRight />
             </Button>
           </form>

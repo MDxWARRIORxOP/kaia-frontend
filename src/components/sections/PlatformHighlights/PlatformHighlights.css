@@ -29,14 +29,22 @@
 }
 
 .platform-highlights__intro::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 24px 8% auto;
   height: 320px;
   background:
-    radial-gradient(circle at 20% 45%, rgba(221, 177, 95, 0.15), transparent 42%),
+    radial-gradient(
+      circle at 20% 45%,
+      rgba(221, 177, 95, 0.15),
+      transparent 42%
+    ),
     radial-gradient(circle at 50% 35%, rgba(21, 122, 67, 0.1), transparent 38%),
-    radial-gradient(circle at 80% 45%, rgba(221, 177, 95, 0.15), transparent 42%);
+    radial-gradient(
+      circle at 80% 45%,
+      rgba(221, 177, 95, 0.15),
+      transparent 42%
+    );
   filter: blur(42px);
   pointer-events: none;
   z-index: 0;
@@ -200,10 +208,14 @@
 }
 
 .platform-card--image::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 28%, rgba(0, 0, 0, 0.48) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.02) 28%,
+    rgba(0, 0, 0, 0.48) 100%
+  );
   box-shadow: var(--platform-image-shadow);
   pointer-events: none;
 }
