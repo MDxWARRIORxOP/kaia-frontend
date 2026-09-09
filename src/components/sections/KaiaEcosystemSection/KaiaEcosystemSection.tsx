@@ -1,3 +1,5 @@
+import { Container } from "@/components/ui/Container";
+
 import "./KaiaEcosystemSection.css";
 
 const leftNodes = [
@@ -106,10 +108,14 @@ function NodeCard({
 export function KaiaEcosystemSection() {
   return (
     <section
-      className="kaia-ecosystem"
+      className="about-page__section kaia-ecosystem"
       aria-labelledby="kaia-ecosystem-heading"
     >
-      <div className="kaia-ecosystem__container">
+      <Container>
+        <span className="kaia-ecosystem__eyebrow">
+          <span className="kaia-ecosystem__eyebrow-line" />
+          The Ecosystem
+        </span>
         <h2 id="kaia-ecosystem-heading" className="kaia-ecosystem__heading">
           The Kaia Karbon <span>Ecosystem.</span>
         </h2>
@@ -187,7 +193,7 @@ export function KaiaEcosystemSection() {
             ))}
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

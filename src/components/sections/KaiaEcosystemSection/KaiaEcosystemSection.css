@@ -1,21 +1,32 @@
 .kaia-ecosystem {
-  position: relative;
-  z-index: 1;
-  padding: 96px 0;
   background: #ffffff;
 }
 
-.kaia-ecosystem__container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 24px;
+.kaia-ecosystem__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  color: #6d9b83;
+}
+
+.kaia-ecosystem__eyebrow-line {
+  width: 18px;
+  height: 1px;
+  background: currentColor;
 }
 
 .kaia-ecosystem__heading {
-  font-size: clamp(30px, 4vw, 44px);
-  font-weight: 700;
-  color: #101e07;
-  margin: 0 0 56px;
+  margin: 18px 0 56px;
+  color: #213223;
+  font-size: clamp(34px, 4vw, 54px);
+  font-weight: 500;
+  line-height: 1.03;
+  letter-spacing: -0.05em;
 }
 
 .kaia-ecosystem__heading span {

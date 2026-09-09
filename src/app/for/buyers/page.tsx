@@ -326,7 +326,7 @@ export default function BuyersPage() {
             <div className="buyers-page__benefit-copy">
               <span className="buyers-page__benefit-pill">
                 <span aria-hidden="true" />
-                Gold Standard · Verra VCS · ICR verified · and more
+                Gold Standard · Verra VCS · ICR verified - and more
               </span>
               <h2>
                 Every project on KAIA is pre-screened against the highest
@@ -630,12 +630,12 @@ export default function BuyersPage() {
                 <ArrowIcon />
               </Button>
             </Link>
-            <Link href="/marketplace">
+            {/* <Link href="/marketplace">
               <Button className="buyers-page__cta-button buyers-page__cta-button--secondary">
                 Explore Marketplace
                 <ArrowIcon />
               </Button>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </section>
