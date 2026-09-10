@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { contactDetails } from "@/lib/constants";
 import "./page.css";
+import { useSearchParams } from "next/navigation";
 
 interface ContactField {
   id: string;
@@ -154,7 +155,8 @@ function IconArrowRight() {
 }
 
 export default function ContactUsPage() {
-  const [active, setActive] = useState(0);
+  const search = useSearchParams();
+  const [active, setActive] = useState(Number(search.get("active")) || 0);
 
   return (
     <div className="contact-page">

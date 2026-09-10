@@ -202,7 +202,7 @@ export default function SellersPage() {
             KAIA offers open market access for carbon credits - reach
             multinational buyers actively seeking high-quality offsets.
           </p>
-          <Link href="/contact">
+          <Link href="/contact?active=1">
             <Button className="sellers-page__hero-button">
               List Your Project
               <ArrowIcon />
@@ -244,13 +244,13 @@ export default function SellersPage() {
                   alt="Carbon credit lifecycle"
                   className="sellers-page__lifecycle-image"
                 />
-                <button
+                {/* <button
                   type="button"
                   className="sellers-page__lifecycle-arrow"
                   aria-label="Next"
                 >
                   <ArrowIcon />
-                </button>
+                </button> */}
                 <div className="sellers-page__lifecycle-overlay" />
                 <div className="sellers-page__lifecycle-copy">
                   <h2>
@@ -334,7 +334,7 @@ export default function SellersPage() {
                 strategies with KAIA. Start with as little as one tonne.
               </p>
 
-              <Link href="/contact">
+              <Link href="/contact?active=1">
                 <Button className="sellers-page__green-button">
                   Sell Carbon Credits
                   <ArrowIcon />
@@ -540,7 +540,7 @@ export default function SellersPage() {
               to sell it.
             </p>
             <div className="sellers-page__cta-actions">
-              <Link href="/contact">
+              <Link href="/contact?active=1">
                 <Button className="sellers-page__cta-button">
                   Sell Carbon Credits
                   <ArrowIcon />

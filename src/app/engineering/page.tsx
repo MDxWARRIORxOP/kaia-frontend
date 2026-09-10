@@ -125,7 +125,7 @@ export default function EngineeringPage() {
             industrial organisations identify, evaluate and implement
             energy-efficiency and decarbonisation opportunities.
           </p>
-          <Link href="/contact">
+          <Link href="/contact?active=2">
             <Button className="eaas-page__hero-cta">
               Book a Discovery Meeting
             </Button>
@@ -275,24 +275,24 @@ export default function EngineeringPage() {
           </p>
 
           <div className="eaas-page__cta-buttons">
-            <Link href="/contact">
+            <Link href="/contact?active=2">
               <Button className="eaas-page__cta-primary">
                 Book a Discovery Meeting &rarr;
               </Button>
             </Link>
             <span className="eaas-page__cta-or">or</span>
-            <Link href="/contact">
+            <Link href="/contact?active=2">
               <Button variant="secondary" className="eaas-page__cta-secondary">
                 Contact Kaia Karbon &rarr;
               </Button>
             </Link>
           </div>
 
-          <div className="eaas-page__cta-contacts">
+          {/* <div className="eaas-page__cta-contacts">
             <a href="mailto:tanmmay@kaiakarbon.com">tanmmay@kaiakarbon.com</a>
             <a href="mailto:offsets@kaiakarbon.com">offsets@kaiakarbon.com</a>
             <span>kaiakarbon.com</span>
-          </div>
+          </div> */}
 
           <p className="eaas-page__cta-note">
             No lengthy brief required. Start with the problem you&apos;re trying
