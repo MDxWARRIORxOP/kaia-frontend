@@ -1,9 +1,13 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
+import { Button } from "@/components/ui/Button";
 import "./page.css";
 import { marketplaceProjects, filterGroups, FilterGroup } from "@/lib/projects";
+// NOTE: filterGroups/FilterGroup are only used by the commented-out catalogue
+// filters below — kept imported so that section can be restored later.
 
 const benefits = [
   {
@@ -133,6 +137,7 @@ function BenefitIcon({ icon }: { icon: string }) {
 }
 
 export default function MarketplacePage() {
+  /* Filter/search state — only used by the commented-out catalogue below.
   const [openFilters, setOpenFilters] = useState<
     Record<FilterGroup["id"], boolean>
   >({
@@ -205,6 +210,9 @@ export default function MarketplacePage() {
       return matchesSearch && matchesFilters;
     });
   }, [activeFilters, searchTerm]);
+  */
+
+  const teaserProjects = marketplaceProjects.slice(0, 8);
 
   return (
     <div className="marketplace-page">
@@ -248,6 +256,9 @@ export default function MarketplacePage() {
         </Container>
       </section>
 
+      {/* Catalogue (search + filters + project grid) — commented out while
+      the project catalogue is still being expanded. Restore this section
+      once there are enough listings to launch publicly.
       <section className="marketplace-page__catalogue">
         <Container className="marketplace-page__catalogue-container">
           <div className="marketplace-page__catalogue-header">
@@ -362,6 +373,51 @@ export default function MarketplacePage() {
               ) : null}
             </div>
           </div>
+        </Container>
+      </section>
+      */}
+
+      <section className="marketplace-page__coming-soon">
+        <div className="marketplace-page__coming-soon-backdrop">
+          {teaserProjects.map((project, index) => (
+            <img
+              src={project.image}
+              alt=""
+              aria-hidden="true"
+              key={`${project.title}-${index}`}
+            />
+          ))}
+        </div>
+        <div className="marketplace-page__coming-soon-scrim" />
+
+        <Container className="marketplace-page__coming-soon-container">
+          {/* <span className="marketplace-page__coming-soon-pill">
+            <span className="marketplace-page__coming-soon-dot" />
+            Catalogue expanding
+          </span> */}
+
+          <h2 className="marketplace-page__coming-soon-title">
+            The Full Catalogue is
+            <br />
+            <span>Coming Soon.</span>
+          </h2>
+
+          <p className="marketplace-page__coming-soon-body">
+            We&apos;re onboarding verified projects across new registries,
+            geographies, and methodologies before opening the marketplace to
+            everyone. In the meantime, our team can walk you through what
+            we&apos;ve verified so far and match you with the right credits.
+          </p>
+
+          <Link href="/contact">
+            <Button className="marketplace-page__coming-soon-cta">
+              Contact Us to Access the Catalogue &rarr;
+            </Button>
+          </Link>
+
+          <span className="marketplace-page__coming-soon-note">
+            Work in progress · verified projects onboarding every month
+          </span>
         </Container>
       </section>
 
