@@ -794,6 +794,15 @@
   line-height: 1.2;
 }
 
+.sellers-page__registry-note {
+  position: relative;
+  z-index: 1;
+  margin: 14px 0 0;
+  color: rgba(255, 255, 255, 0.56);
+  font-size: 13px;
+  font-style: italic;
+}
+
 .sellers-page__scale-right {
   position: relative;
   overflow: hidden;
@@ -1418,6 +1427,7 @@
   .sellers-page__lifecycle-step--left .sellers-page__lifecycle-step-content,
   .sellers-page__lifecycle-step--right .sellers-page__lifecycle-step-content {
     grid-column: 2;
+    grid-row: 1;
     justify-self: start;
     max-width: 620px;
     padding-left: 0;
@@ -1426,7 +1436,11 @@
   }
 
   .sellers-page__lifecycle-step-marker {
+    position: relative;
+    top: auto;
+    left: auto;
     grid-column: 1;
+    grid-row: 1;
     display: flex;
     justify-self: center;
     align-self: start;
@@ -1437,12 +1451,23 @@
     margin-top: 0;
   }
 
+  .sellers-page__lifecycle-step--left .sellers-page__lifecycle-step-marker,
+  .sellers-page__lifecycle-step--right .sellers-page__lifecycle-step-marker {
+    top: auto;
+  }
+
   .sellers-page__lifecycle-step-number {
     position: relative;
     top: auto;
     left: auto;
     right: auto;
     margin-bottom: 0;
+  }
+
+  .sellers-page__lifecycle-step--left .sellers-page__lifecycle-step-number,
+  .sellers-page__lifecycle-step--right .sellers-page__lifecycle-step-number {
+    left: auto;
+    right: auto;
   }
 
   .sellers-page__lifecycle-step-dot {
@@ -1582,8 +1607,7 @@
   }
 
   .sellers-page__lifecycle-step-dot {
-    width: 9px;
-    height: 9px;
+    display: none;
   }
 
   .sellers-page__lifecycle-step h3 {
