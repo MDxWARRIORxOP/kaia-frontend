@@ -13,7 +13,7 @@ export const navigationItems: NavigationItem[] = [
 ];
 
 export const contactDetails = {
-  email: "support@kaia.com",
+  email: "info@kaiakarbon.com",
   phone: "+91 453-4968-4546",
   address:
     "Flat No. 1204, Tower B, Sea Breeze Residency, Juhu Tara Road, Opposite JW Marriott Hotel",
