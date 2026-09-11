@@ -1,6 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import {
+  ReactEventHandler,
+  SubmitEventHandler,
+  SyntheticEvent,
+  useState,
+} from "react";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/Button";
@@ -50,6 +55,25 @@ const fieldRows: ContactField[][] = [
       wide: true,
     },
   ],
+];
+
+interface MapPin {
+  name: string;
+  x: number;
+  y: number;
+  hub?: boolean;
+}
+
+// India is the hub (KAIA's home base) — every other pin connects back to it.
+const mapPins: MapPin[] = [
+  { name: "India", x: 68, y: 28, hub: true },
+  { name: "China", x: 80.5, y: 17 },
+  { name: "Italy", x: 47.3, y: 15.5 },
+  { name: "United Kingdom", x: 43.3, y: 6 },
+  { name: "United States", x: 18.7, y: 18.5 },
+  { name: "Brazil", x: 28, y: 71 },
+  { name: "Kenya", x: 55, y: 57 },
+  { name: "Australia", x: 91.5, y: 89 },
 ];
 
 function IconWrench() {
@@ -158,6 +182,28 @@ export default function ContactUsPage() {
   const search = useSearchParams();
   const [active, setActive] = useState(Number(search.get("active")) || 0);
 
+  async function handleContact(e: SyntheticEvent) {
+    e.preventDefault();
+    const target = e.target as typeof e.target & {
+      goals: { value: string };
+      volume: { value: string };
+      organization: { value: string };
+      email: { value: string };
+      "full-name": { value: string };
+    };
+
+    await fetch("/api/contact", {
+      method: "POST",
+      body: JSON.stringify({
+        goals: target.goals?.value,
+        volume: target.volume?.value,
+        organization: target.organization.value,
+        email: target.email.value,
+        "full-name": target["full-name"].value,
+      }),
+    });
+  }
+
   return (
     <div className="contact-page">
       <section className="contact-page__hero">
@@ -238,7 +284,7 @@ export default function ContactUsPage() {
             </div>
           </div>
 
-          <form className="contact-page__form">
+          <form onSubmit={handleContact} className="contact-page__form">
             <div
               className="contact-page__path-toggle"
               aria-label="Contact reason"
@@ -295,7 +341,9 @@ export default function ContactUsPage() {
                     >
                       <span>{field.label}</span>
                       <input
+                        name={field.id}
                         id={field.id}
+                        required={true}
                         type={field.type}
                         placeholder={field.placeholder}
                       />
@@ -311,6 +359,7 @@ export default function ContactUsPage() {
               <span>Tell us about your climate goals</span>
               <textarea
                 id="goals"
+                name="goals"
                 placeholder="Share your sustainability objectives, timeline, or any specific requirements..."
               />
             </label>
@@ -341,11 +390,48 @@ export default function ContactUsPage() {
           </div>
 
           <div className="contact-page__trusted-stage">
-            <div className="contact-page__map" aria-hidden="true">
+            <div className="contact-page__map">
               <img src={"/images/mapImage.png"} alt="" />
-              <span className="contact-page__map-pin contact-page__map-pin--one" />
-              <span className="contact-page__map-pin contact-page__map-pin--two" />
-              <span className="contact-page__map-pin contact-page__map-pin--three" />
+
+              <svg
+                className="contact-page__map-lines"
+                viewBox="0 0 100 100"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+              >
+                {mapPins
+                  .filter((pin) => !pin.hub)
+                  .map((pin) => {
+                    const hub = mapPins.find((item) => item.hub)!;
+                    return (
+                      <line
+                        key={pin.name}
+                        x1={hub.x}
+                        y1={hub.y}
+                        x2={pin.x}
+                        y2={pin.y}
+                        className="contact-page__map-line"
+                      />
+                    );
+                  })}
+              </svg>
+
+              {mapPins.map((pin) => (
+                <span
+                  key={pin.name}
+                  className={
+                    pin.hub
+                      ? "contact-page__map-pin contact-page__map-pin--hub"
+                      : "contact-page__map-pin"
+                  }
+                  style={{ left: `${pin.x}%`, top: `${pin.y}%` }}
+                  tabIndex={0}
+                >
+                  <span className="contact-page__map-pin-tooltip">
+                    {pin.name}
+                  </span>
+                </span>
+              ))}
             </div>
           </div>
         </Container>
