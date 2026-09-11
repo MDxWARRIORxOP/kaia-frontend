@@ -1,0 +1,99 @@
+.state-page {
+  min-height: calc(100vh - 400px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 24px;
+  background: #f7f7f2;
+}
+
+.state-page__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.state-page__numeral {
+  font-size: clamp(72px, 12vw, 128px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #166534;
+  opacity: 0.14;
+  margin: 0;
+}
+
+.state-page__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(220, 38, 38, 0.08);
+  color: #b91c1c;
+  margin-bottom: 4px;
+}
+
+.state-page__icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+.state-page__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  color: #6d9b83;
+}
+
+.state-page__pill-line {
+  width: 18px;
+  height: 1px;
+  background: currentColor;
+}
+
+.state-page__title {
+  margin: 0;
+  color: #101e07;
+  font-size: clamp(28px, 3.6vw, 42px);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+.state-page__body {
+  margin: 0;
+  max-width: 460px;
+  color: #4b5a41;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.state-page__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.state-page__digest {
+  margin-top: 8px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(16, 30, 7, 0.05);
+  color: #8a978a;
+  font-size: 12px;
+  font-family: monospace;
+}

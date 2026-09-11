@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Inter } from "next/font/google";
 import "@/css/global.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { PageLoader } from "@/components/ui/PageLoader";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,14 +28,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.className}>
-      <head>
-        <meta name="apple-mobile-web-app-title" content="Kaia" />
-      </head>
       <body className="bg-white text-black antialiased">
         <div id="root">
           <div className="min-h-screen bg-background">
             <Navbar />
-            <main>{children}</main>
+            <main>
+              <Suspense fallback={<PageLoader />}>{children}</Suspense>
+            </main>
             <Footer />
           </div>
         </div>
